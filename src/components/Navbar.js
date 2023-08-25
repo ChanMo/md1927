@@ -60,7 +60,7 @@ export default function Navbar() {
               </div>
             </Menu>
           </div> */}
-          <Button href='/app'>案例展示</Button>
+          <Button href='/case'>案例展示</Button>
           <Button href="/about">关于我们</Button>
         </Toolbar>
       </Container>

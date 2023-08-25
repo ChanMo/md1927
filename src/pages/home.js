@@ -7,7 +7,7 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import { blue, lime, amber, pink } from '@mui/material/colors';
 
 import theme from '../utils/theme'
-import Layout from '../container/Layout';
+import Layout from '../components/Layout';
 
 function HomePage() {
   return (

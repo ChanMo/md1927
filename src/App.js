@@ -15,8 +15,8 @@ import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import GroupsIcon from '@mui/icons-material/Groups';
 import { blue, lime, amber, pink } from '@mui/material/colors';
 
-import Navbar from './container/Navbar'
-import Footer from './container/Footer'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import banner from './banner.jpg'
 import theme from './utils/theme'
 
