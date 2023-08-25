@@ -1,33 +1,26 @@
 import { ThemeProvider } from '@mui/material/styles'
-import Container from '@mui/material/Container'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import Grid from '@mui/material/Grid'
-import Stack from '@mui/material/Stack'
-// import Timeline from '@mui/lab/Timeline'
-// import TimelineItem from '@mui/lab/TimelineItem'
-// import TimelineSeparator from '@mui/lab/TimelineSeparator'
-// import TimelineConnect
-
+import { Box, Container, Grid, Typography } from '@mui/material'
 import BoltIcon from '@mui/icons-material/Bolt';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import GroupsIcon from '@mui/icons-material/Groups';
 import { blue, lime, amber, pink } from '@mui/material/colors';
 
-import Navbar from './container/Navbar'
-import Footer from './container/Footer'
-import banner from './banner.jpg'
-import theme from './utils/theme'
+import theme from '../utils/theme'
 
-
-function App() {
+function HomePage() {
   return (
-    <ThemeProvider theme={theme}>
-      <Navbar />
+    <>
       <Box sx={{ position: 'relative', background: 'rgba(0,0,0,0.4)' }}>
         <Box
-          sx={{ zIndex: '-1', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundImage: `url(${banner})`, backgroundSize: 'cover' }} />
+          sx={{
+            zIndex: '-1',
+            position: 'absolute',
+            top: 0, left: 0,
+            width: '100%', height: '100%',
+            backgroundImage: `url(${'/images/banner.jpg'})`,
+            backgroundSize: 'cover'
+          }} />
         <Container maxWidth="xl" sx={{ py: 30 }}>
           <Typography variant="h2" gutterBottom color="white">
             专注于区块链创新应用研发
@@ -96,9 +89,8 @@ function App() {
           <Typography gutterBottom>Wechat: chanmo1927</Typography>
         </Container>
       </Box>
-      <Footer />
-    </ThemeProvider>
+    </>
   );
 }
 
-export default App;
+export default HomePage;
