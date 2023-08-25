@@ -7,29 +7,26 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import { blue, lime, amber, pink } from '@mui/material/colors';
 
 import theme from '../utils/theme'
+import Layout from '../container/Layout';
 
 function HomePage() {
   return (
-    <>
-      <Box sx={{ position: 'relative', background: 'rgba(0,0,0,0.4)' }}>
-        <Box
-          sx={{
-            zIndex: '-1',
-            position: 'absolute',
-            top: 0, left: 0,
-            width: '100%', height: '100%',
-            backgroundImage: `url(${'/images/banner.jpg'})`,
-            backgroundSize: 'cover'
-          }} />
-        <Container maxWidth="xl" sx={{ py: 30 }}>
-          <Typography variant="h2" gutterBottom color="white">
-            专注于区块链创新应用研发
-          </Typography>
-          <Typography variant="h5" color="white">
-            数字货币交易所, 区块链钱包, NFT去中心化交易
-          </Typography>
-        </Container>
-      </Box>
+    <Layout banner={'/images/banner.jpg'} bannerContent={
+      <Container maxWidth="xl" sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height:'100%'
+      }}>
+        <Typography variant="h2" gutterBottom color="white">
+          专注于区块链创新应用研发
+        </Typography>
+        <Typography variant="h5" color="white">
+          数字货币交易所, 区块链钱包, NFT去中心化交易
+        </Typography>
+      </Container>}>
+
       <Container maxWidth="xl" sx={{ py: 20 }}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={3} sx={{ display: 'flex', alignItems: 'center' }}>
@@ -89,7 +86,7 @@ function HomePage() {
           <Typography gutterBottom>Wechat: chanmo1927</Typography>
         </Container>
       </Box>
-    </>
+    </Layout>
   );
 }
 
