@@ -1,17 +1,10 @@
 import { Box } from "@mui/material";
+import Layout from "../components/Layout";
 
 function CasePage() {
-  return <>
-    <Box
-      sx={{
-        zIndex: '-1',
-        position: 'absolute',
-        top: 0, left: 0,
-        width: '100%', height: '100%',
-        backgroundImage: `url(${'/images/banner.jpg'})`,
-        backgroundSize: 'cover'
-      }} />
-  </>
+  return <Layout banner={'/images/banner.jpg'}>
+
+  </Layout>
 }
 
 export default CasePage;
