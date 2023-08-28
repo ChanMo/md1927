@@ -5,7 +5,9 @@ import {
   Typography,
   Button,
   Menu,
-  MenuItem
+  MenuItem,
+  Box,
+  Link
 } from '@mui/material'
 import { useState } from 'react'
 
@@ -34,7 +36,7 @@ export default function Navbar() {
             }}>
             济南漫点信息科技有限公司
           </Typography>
-          {/* <div>
+          <div>
             <Button
               id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}
@@ -43,7 +45,7 @@ export default function Navbar() {
               onClick={handleClick}
               onMouseOver={handleClick}
             >
-              Dashboard
+              案例展示
             </Button>
             <Menu
               id="basic-menu"
@@ -51,16 +53,28 @@ export default function Navbar() {
               open={open}
               onClose={handleClose}
             >
-              <div
+              <Box
+                sx={{
+                  'a': {
+                    display: 'block',
+                    width: '100%',
+                    color: "#333"
+                  }
+                }}
                 onMouseLeave={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
-              </div>
+                <MenuItem onClick={handleClose}>
+                  <Link underline="none" href="/case">微信小程序</Link>
+                </MenuItem>
+                <MenuItem href="/case" onClick={handleClose}>
+                  <Link underline="none" href="/case">Android/IOS移动端</Link>
+                </MenuItem>
+                <MenuItem href="/case" onClick={handleClose}>
+                  <Link underline="none" href="/case">网站设计</Link>
+                </MenuItem>
+              </Box>
             </Menu>
-          </div> */}
-          <Button href='/case'>案例展示</Button>
+          </div>
           <Button href="/about">关于我们</Button>
         </Toolbar>
       </Container>

@@ -1,7 +1,5 @@
 import {
   Box,
-  Typography,
-  Link
 } from '@mui/material'
 
 export default function Layout({
@@ -27,7 +25,8 @@ export default function Layout({
           sx={{
             zIndex: '-2',
             position: 'fixed',
-            top: 0, left: 0,
+            top: 0,
+            left: 0,
             width: '100%',
             height: '100%',
             backgroundImage: `url(${'/images/banner.jpg'})`,

@@ -2,7 +2,6 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
-  RouterProvider,
 } from "react-router-dom";
 import HomePage from "../pages/home";
 import AboutPage from "../pages/about";

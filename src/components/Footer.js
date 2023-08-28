@@ -13,34 +13,31 @@ export default function Footer() {
       <Box sx={{
         background: '#444',
         color: "#fff",
-        py: 6
+        py: 6,
       }}>
         <Container maxWidth='xl' sx={{
           '@media screen and (max-width:900px)':{
             textAlign:'center',
             '.MuiGrid-grid-xs-12':{
               mb:2,
-              ":nth-last-child":{
-                mb:0
-              }
             },
           }
         }}>
-          <Grid container>
-            <Grid xs={12} md={5}>
+          <Grid container sx={{px:10}}>
+            <Grid item xs={12} md={5}>
               <Typography variant='h4' gutterBottom>联系我们</Typography>
               <Typography gutterBottom>电话：13145312751</Typography>
               <Typography gutterBottom>邮箱：mandiankeji@163.com</Typography>
               <Typography gutterBottom>微信：mandian1927</Typography>
               <Typography>地址：济南市历下区盛景广场A座1606室</Typography>
             </Grid>
-            <Grid xs={12} md={5}>
+            <Grid item xs={12} md={5}>
               <Typography variant='h4' gutterBottom>案例展示</Typography>
               <Typography gutterBottom>微信小程序</Typography>
               <Typography gutterBottom>Android/IOS移动端</Typography>
               <Typography>网站设计</Typography>
             </Grid>
-            <Grid xs={12} md={2}>
+            <Grid item xs={12} md={2}>
               <Box sx={{
                 textAlign: 'center',
                 'img': {

@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import Layout from "../components/Layout";
 
 function CasePage() {

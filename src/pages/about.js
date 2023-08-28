@@ -1,6 +1,5 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Layout from "../components/Layout";
-import { Image } from "@mui/icons-material";
 
 function AboutPage() {
   return <Layout banner={'/images/banner.jpg'} bannerContent={
