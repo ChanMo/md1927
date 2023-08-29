@@ -22,10 +22,9 @@ export default function Navbar() {
       <Container>
         <Toolbar>
           <Typography
-            variant="h6"
+            variant="h7"
             href="/"
             color="dark" component="a" sx={{
-              mr: 10,
               color: '#333',
               textDecoration: 'none'
             }}>

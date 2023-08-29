@@ -49,7 +49,7 @@ function HomePage() {
       title: '区块链-MPOC NFT交易平台',
       type: 'mpoc',
       createAt: '2021年3月13日',
-      image: '/cases/nft/home.jpeg',
+      image: '/cases/nft/home.jpg',
       introduction: [
         '支持ERC1155, 兼容OpenSea等主流NFT交易平台',
         '支持多种音频以及视频格式, 支持多种解码规格和音乐保护',
@@ -70,22 +70,32 @@ function HomePage() {
           <Grid item xs={12} md={7} sx={{
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            '@media screen and (max-width:900px)': {
+              textAlign: 'center',
+              alignItems: 'center'
+            }
           }}>
             <Typography variant="h3" gutterBottom color="white">
               专注于创新应用开发
             </Typography>
-            <Typography variant="h5" paddingBottom={10} gutterBottom color="white">
+            <Typography variant="h5" paddingBottom={4} gutterBottom color="white">
               科技创新，引领未来
             </Typography>
-            {/* <Button variant="outlined"
+            <Button variant="outlined"
               href='/about'
               sx={{
                 color: "#fff", borderColor: "#fff",
                 width: 'fit-content'
-              }}>联系我们</Button> */}
+              }}>联系我们</Button>
           </Grid>
-          <Grid item xs={12} md={5} sx={{ 'img': { width: '100%' } }}>
+          <Grid item xs={12} md={5} sx={{
+            '@media screen and (max-width:900px)': {
+              display: 'none'
+            }, 'img': {
+              width: '100%'
+            }
+          }}>
             <img src='/images/pen.jpeg' alt='' />
           </Grid>
         </Grid>
@@ -105,14 +115,23 @@ function HomePage() {
             sx={{ mb: 5 }}>关于我们</Typography>
           <Box>
             <Grid container spacing={3}>
-              <Grid item xs={12} md={7} sx={{ pr: 10 }}>
+              <Grid item xs={12} md={7} sx={{
+                pr: 10,
+                '@media screen and (max-width:900px)': {
+                  pr: 0
+                },
+              }}>
                 <Typography gutterBottom>济南漫点信息科技是一家专注于互联网项目定制开发的公司，成立于 2019 年。公司技术前沿，擅于从 0 开发各类创新型应用。</Typography>
                 <Typography gutterBottom>公司主营业务涵盖多个行业和领域，包括区块链、人工智能、物联网、Sass 系统、教育、医疗等。公司致力于为客户提供高质量、高性价比的项目开发服务，帮助客户实现业务目标。</Typography>
                 <Typography gutterBottom>公司拥有一支经验丰富的技术团队，成员具有丰富的项目开发经验，擅长使用各种前沿技术。</Typography>
                 <Typography gutterBottom>公司拥有完善的项目管理流程，确保项目按时、高质量完成。公司还提供售后支持，帮助客户解决项目使用过程中遇到的问题。</Typography>
 
               </Grid>
-              <Grid item xs={6} md={5}>
+              <Grid item xs={6} md={5} sx={{
+                '@media screen and (max-width:900px)': {
+                  display: 'none'
+                },
+              }}>
                 <div className='about_img'>
                   <img src="/images/industry.jpeg" alt=''></img>
                 </div>
@@ -137,12 +156,17 @@ function HomePage() {
         <Container sx={{ py: 10, color: "#fff" }}>
           <Typography variant='h4' sx={{ mb: 5 }}>我们的优势</Typography>
           <Grid container spacing={3}>
-            <Grid item xs={6} md={3} sx={{ display: 'flex', alignItems: 'center' }}>
+            <Grid item xs={12} md={3} sx={{
+              display: 'flex', alignItems: 'center',
+              '@media screen and (max-width:900px)': {
+                justifyContent: 'center'
+              },
+            }}>
               <BoltIcon sx={{
                 mr: 2, fontSize: 46, color: pink[500],
                 bgcolor: "#fff", borderRadius: 2, p: 1
               }} />
-              <Box>
+              <Box sx={{ width: 240 }}>
                 <Typography variant="h5" gutterBottom>前沿</Typography>
                 <Typography variant='h7' color="white.600">
                   使用更前沿的开发技术框架<br />
@@ -151,7 +175,12 @@ function HomePage() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={6} md={3} sx={{ display: 'flex', alignItems: 'center' }}>
+            <Grid item xs={12} md={3} sx={{
+              display: 'flex', alignItems: 'center',
+              '@media screen and (max-width:900px)': {
+                justifyContent: 'center'
+              },
+            }}>
               <HealthAndSafetyIcon sx={{
                 mr: 2,
                 fontSize: 46,
@@ -159,7 +188,7 @@ function HomePage() {
                 bgcolor: "#fff",
                 borderRadius: 2, p: 1
               }} />
-              <Box>
+              <Box sx={{ width: 240 }}>
                 <Typography variant="h5" gutterBottom>安全</Typography>
                 <Typography variant='h7' color="white.600">
                   严格遵循语言框架安全开发规范<br />
@@ -168,13 +197,18 @@ function HomePage() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={6} md={3} sx={{ display: 'flex', alignItems: 'center' }}>
+            <Grid item xs={12} md={3} sx={{
+              display: 'flex', alignItems: 'center',
+              '@media screen and (max-width:900px)': {
+                justifyContent: 'center'
+              },
+            }}>
               <LightbulbIcon sx={{
                 mr: 2,
                 fontSize: 46, color: lime[500],
                 bgcolor: "#fff", borderRadius: 2, p: 1
               }} />
-              <Box>
+              <Box sx={{ width: 240 }}>
                 <Typography variant="h5" gutterBottom>创新</Typography>
                 <Typography variant='h7' color="white.600">
                   了解并剖析众多创新应用核心原理<br />
@@ -182,9 +216,14 @@ function HomePage() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={6} md={3} sx={{ display: 'flex', alignItems: 'center' }}>
+            <Grid item xs={12} md={3} sx={{
+              display: 'flex', alignItems: 'center',
+              '@media screen and (max-width:900px)': {
+                justifyContent: 'center'
+              },
+            }}>
               <GroupsIcon sx={{ mr: 2, fontSize: 46, color: blue[500], bgcolor: "#fff", borderRadius: 2, p: 1 }} />
-              <Box>
+              <Box sx={{ width: 240 }}>
                 <Typography variant="h5" gutterBottom>高效</Typography>
                 <Typography variant='h7' color="white.600">
                   具备高效专业的研发团队<br />
@@ -254,7 +293,13 @@ function HomePage() {
                     </Box>
                   </Grid>
                   <Grid item xs={12} md={5}>
-                    <Box sx={{ pl: 6, py: 2, pb: 10 }}>
+                    <Box sx={{
+                      pl: 6, py: 2, pb: 10,
+                      '@media screen and (max-width:900px)': {
+                        pl: 3,
+                        pr: 3
+                      }
+                    }}>
                       <Typography variant='h5' gutterBottom>{row.title}</Typography>
                       {row.introduction.map((r, k) => <Typography key={k} gutterBottom>{r}</Typography>)}
                     </Box>
@@ -268,7 +313,7 @@ function HomePage() {
             </Swiper>
           </Box>
         </Container>
-      </Box>
+      </Box >
       <Box sx={{ backgroundColor: '#f7f6f9', py: 10, alignItems: 'center' }}>
         <Container>
           <Grid container spacing={3}>
@@ -279,17 +324,18 @@ function HomePage() {
 
                 }}
                 center={{ longitude: 117.109517, latitude: 36.695167 }}
-                zoom={14}
+                zoom={12}
               >
                 <Marker position={{ longitude: 117.109517, latitude: 36.695167 }} />
               </Map>
             </Grid>
             <Grid item xs={12} md={5}>
               <Box sx={{
-                ml: 5,
+                mx: 5,
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
+                
               }}>
                 <Typography variant="h5" gutterBottom>济南漫点信息科技有限公司</Typography>
                 <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>公司地址</Typography>
@@ -324,7 +370,7 @@ function HomePage() {
           </Grid>
         </Container>
       </Box>
-    </Layout>
+    </Layout >
   );
 }
 

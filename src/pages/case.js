@@ -38,7 +38,7 @@ function CasePage() {
       title: '区块链-MPOC NFT交易平台',
       type: 'mpoc',
       createAt: '2021年3月13日',
-      image: '/cases/nft/home.jpeg',
+      image: '/cases/nft/home.jpg',
       introduction: [
         '支持ERC1155, 兼容OpenSea等主流NFT交易平台',
         '支持多种音频以及视频格式, 支持多种解码规格和音乐保护',

@@ -52,19 +52,6 @@ export default function Footer() {
               <Link href='https://www.3ykeji.com/' target='__blank'>日照异域科技</Link>
               <Link href="http://www.langyikeji.cn/" target='__blank'>陕西朗逸科技文化</Link>
             </Grid>
-            {/* <Grid item xs={12} md={2}>
-              <Box sx={{
-                textAlign: 'center',
-                'img': {
-                  width:'120px'
-                }
-              }}>
-                <div>
-                  <img src="/images/mdian.png" alt=''></img>
-                </div>
-                <Typography>详情咨询</Typography>
-              </Box>
-            </Grid> */}
           </Grid>
         </Container>
       </Box>
@@ -74,13 +61,13 @@ export default function Footer() {
         display: 'flex',
         alignItems: 'cente',
         justifyContent: 'center',
-        py: 1,
-        fontSize: '.875rem',
+        py: 2,
+        fontSize: '.8rem',
         "a": {
           color: blue[200],
         }
       }}>
-        <Typography>济南漫点信息科技有限公司</Typography>
+        <Typography sx={{ fontSize: '.8rem' }}>济南漫点信息科技有限公司</Typography>
         <Link href="https://beian.miit.gov.cn/">鲁ICP备19017316-3号</Link>
       </Box>
     </Box>
