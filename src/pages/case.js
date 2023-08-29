@@ -26,7 +26,7 @@ function CasePage() {
       title: '教育-题库管理平台',
       type: 'tk',
       createAt: '2021年3月13日',
-      image: '/cases/tk/tk0.jpg',
+      image: '/cases/tk/tk5.jpg',
       introduction: [
         '多学校线上题库管理',
         '创建试题试卷',

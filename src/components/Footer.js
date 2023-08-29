@@ -31,7 +31,8 @@ export default function Footer() {
               'a': {
                 color: grey[200],
                 display: 'block',
-                mb: 1
+                mb: 1,
+                width:'fit-content'
               }
             }
           }}>

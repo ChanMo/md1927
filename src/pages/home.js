@@ -11,8 +11,10 @@ import Layout from '../components/Layout';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/css';
 import { Map, Marker } from 'react-amap';
+import { useState } from 'react';
 
 function HomePage() {
+  const [currentIndex, setCurrentIndex] = useState(0)
   const caselist = [
     {
       title: 'SaaS-地质勘探平台',
@@ -24,26 +26,29 @@ function HomePage() {
         '通过地质数据，展示三维模型，可以实现二维切片展示，全方位查看地质状况',
         '可以多企业多项目部署，每个项目包含多个地质点位，实现点位状态管理。',
         '应用于轨道交通、桥梁、水电管道等需要地质分析的场景'
-      ]
+      ],
+      tags: ['Sass', '地质勘探', '三维模型']
     },
     {
       title: 'Saas-高水平建设平台',
       type: 'gsp',
       createAt: '2021年3月13日',
-      image: '/cases/gsp/gsp0.png',
-      introduction: ['项目管理', '数据分析', '大屏数据实时展示']
+      image: '/cases/gsp/gsp0.jpg',
+      introduction: ['项目管理', '数据分析', '大屏数据实时展示'],
+      tags: ['Sass', '数据分析']
     },
     {
       title: '教育-题库管理平台',
       type: 'tk',
       createAt: '2021年3月13日',
-      image: '/cases/tk/tk0.jpg',
+      image: '/cases/tk/tk5.jpg',
       introduction: [
         '多学校线上题库管理',
         '创建试题试卷',
         '导出试卷',
         '模拟考试',
-      ]
+      ],
+      tags: ['教育', '题库', '线上考试']
     },
     {
       title: '区块链-MPOC NFT交易平台',
@@ -55,7 +60,8 @@ function HomePage() {
         '支持多种音频以及视频格式, 支持多种解码规格和音乐保护',
         '现代化的在线播放器, 支持作品收藏, 音乐人收藏等',
         '多种交易模型以及多币种支付, 安全高效',
-      ]
+      ],
+      tags: ['区块链', 'NFT', '音频播放', '多币种']
     }
   ]
   return (
@@ -83,11 +89,20 @@ function HomePage() {
               科技创新，引领未来
             </Typography>
             <Button variant="outlined"
-              href='/about'
               sx={{
-                color: "#fff", borderColor: "#fff",
-                width: 'fit-content'
-              }}>联系我们</Button>
+                borderColor: "#fff",
+                width: 'fit-content',
+                p:0,
+                'a': {
+                  color: "#fff",
+                  py:0.6,
+                  px:1.5,
+                  textDecoration: 'none',
+                  display:'block',
+                }
+              }}>
+              <a href='mailto:mandiankeji@163.com' target='__blank'>联系我们</a>
+            </Button>
           </Grid>
           <Grid item xs={12} md={5} sx={{
             '@media screen and (max-width:900px)': {
@@ -96,7 +111,7 @@ function HomePage() {
               width: '100%'
             }
           }}>
-            <img src='/images/pen.jpeg' alt='' />
+            <img src='/images/team.jpg' alt='' />
           </Grid>
         </Grid>
       </Container>}>
@@ -255,10 +270,15 @@ function HomePage() {
               '.control': {
                 position: 'absolute',
                 right: 0,
+                width:'40%',
                 bottom: 0,
                 zIndex: 1,
                 display: 'flex',
                 flexDirection: 'row',
+                alignItems: 'center',
+                '@meida screen and (max-width:900px)':{
+                  width:'100%'
+                },
                 'div': {
                   cursor: 'pointer',
                   mx: 5,
@@ -271,10 +291,11 @@ function HomePage() {
             <Swiper
               spaceBetween={50}
               loop
-              onSlideChange={() => console.log('slide change')}
-              onSwiper={(swiper) => console.log(swiper)}
+              onSlideChange={(e) => {
+                setCurrentIndex(e.realIndex)
+              }}
             >
-              {caselist.map((row, key) => <SwiperSlide key={key}>
+              {caselist.map((row, key) => <SwiperSlide key={key} style={{ background: '#fff' }}>
                 <Grid container>
                   <Grid item xs={12} md={7} sx={{ overflow: 'hidden' }}>
                     {/* <img className='swiper_banner' src={row.image} alt='' /> */}
@@ -302,12 +323,26 @@ function HomePage() {
                     }}>
                       <Typography variant='h5' gutterBottom>{row.title}</Typography>
                       {row.introduction.map((r, k) => <Typography key={k} gutterBottom>{r}</Typography>)}
+                      <Box>
+                        {row.tags.map((r, k) => <Typography sx={{
+                          border: '1px solid',
+                          borderColor: grey[500],
+                          p: '.1rem .4rem',
+                          borderRadius: 1,
+                          color: grey[800],
+                          fontSize: '.6rem',
+                          width: 'fit-content',
+                          display: 'inline-block',
+                          mr: 1
+                        }} key={k} gutterBottom>{r}</Typography>)}
+                      </Box>
                     </Box>
                   </Grid>
                 </Grid>
               </SwiperSlide>)}
               <div className='control'>
                 <SlidePrevButton />
+                <Box>{currentIndex + 1}/{caselist.length}</Box>
                 <SlideNextButton />
               </div>
             </Swiper>
@@ -335,7 +370,7 @@ function HomePage() {
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
-                
+
               }}>
                 <Typography variant="h5" gutterBottom>济南漫点信息科技有限公司</Typography>
                 <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>公司地址</Typography>
@@ -386,9 +421,11 @@ function SlidePrevButton() {
 
 function SlideNextButton() {
   const swiper = useSwiper();
-
   return (
-    <div onClick={() => swiper.slideNext()}>
+    <div onClick={() => {
+      swiper.slideNext()
+      console.log(1234);
+    }}>
       <KeyboardArrowRightIcon style={{ fontSize: 40 }} />
     </div>
   );
