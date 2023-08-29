@@ -78,10 +78,12 @@ function HomePage() {
             <Typography variant="h5" paddingBottom={10} gutterBottom color="white">
               科技创新，引领未来
             </Typography>
-            <Button variant="outlined" sx={{
-              color: "#fff", borderColor: "#fff",
-              width: 'fit-content'
-            }}>联系我们</Button>
+            {/* <Button variant="outlined"
+              href='/about'
+              sx={{
+                color: "#fff", borderColor: "#fff",
+                width: 'fit-content'
+              }}>联系我们</Button> */}
           </Grid>
           <Grid item xs={12} md={5} sx={{ 'img': { width: '100%' } }}>
             <img src='/images/pen.jpeg' alt='' />
