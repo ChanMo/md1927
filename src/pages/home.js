@@ -1,119 +1,150 @@
-import { Box, Container, Grid, Typography } from '@mui/material'
+import { Box, Button, Container, Grid, Typography } from '@mui/material'
 import BoltIcon from '@mui/icons-material/Bolt';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import GroupsIcon from '@mui/icons-material/Groups';
-import { blue, lime, amber, pink } from '@mui/material/colors';
+import { blue, lime, amber, pink, grey } from '@mui/material/colors';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 import Layout from '../components/Layout';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/css';
+import { Map, Marker } from 'react-amap';
 
 function HomePage() {
+  const caselist = [
+    {
+      title: 'SaaS-地质勘探平台',
+      type: 'dzkt',
+      createAt: '2021年3月13日',
+      image: '/cases/dzkt/dzkt0.png',
+      introduction: [
+        '一款地质数据分析平台',
+        '通过地质数据，展示三维模型，可以实现二维切片展示，全方位查看地质状况',
+        '可以多企业多项目部署，每个项目包含多个地质点位，实现点位状态管理。',
+        '应用于轨道交通、桥梁、水电管道等需要地质分析的场景'
+      ]
+    },
+    {
+      title: 'Saas-高水平建设平台',
+      type: 'gsp',
+      createAt: '2021年3月13日',
+      image: '/cases/gsp/gsp0.png',
+      introduction: ['项目管理', '数据分析', '大屏数据实时展示']
+    },
+    {
+      title: '教育-题库管理平台',
+      type: 'tk',
+      createAt: '2021年3月13日',
+      image: '/cases/tk/tk0.jpg',
+      introduction: [
+        '多学校线上题库管理',
+        '创建试题试卷',
+        '导出试卷',
+        '模拟考试',
+      ]
+    },
+    {
+      title: '区块链-MPOC NFT交易平台',
+      type: 'mpoc',
+      createAt: '2021年3月13日',
+      image: '/cases/nft/home.png',
+      introduction: [
+        '支持ERC1155, 兼容OpenSea等主流NFT交易平台',
+        '支持多种音频以及视频格式, 支持多种解码规格和音乐保护',
+        '现代化的在线播放器, 支持作品收藏, 音乐人收藏等',
+        '多种交易模型以及多币种支付, 安全高效',
+      ]
+    }
+  ]
   return (
     <Layout banner={'/images/banner.jpg'} bannerContent={
-      <Container maxWidth="xl" sx={{
+      <Container sx={{
         display: 'flex',
-        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         height: '100%'
       }}>
-        <Typography variant="h2" gutterBottom color="white">
-          专注于创新应用开发
-        </Typography>
-        <Typography variant="h5" color="white">
-          科技创新，引领未来
-        </Typography>
+        <Grid container>
+          <Grid item xs={12} md={7} sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center'
+          }}>
+            <Typography variant="h3" gutterBottom color="white">
+              专注于创新应用开发
+            </Typography>
+            <Typography variant="h5" paddingBottom={10} gutterBottom color="white">
+              科技创新，引领未来
+            </Typography>
+            <Button variant="outlined" sx={{
+              color: "#fff", borderColor: "#fff",
+              width: 'fit-content'
+            }}>联系我们</Button>
+          </Grid>
+          <Grid item xs={12} md={5} sx={{ 'img': { width: '100%' } }}>
+            <img src='/images/pen.jpeg' alt='' />
+          </Grid>
+        </Grid>
       </Container>}>
       <Box style={{ background: "#fff" }}>
-        <Container maxWidth="xl" sx={{
-          py: 10
-        }}>
-          <Typography variant='h3'
-            sx={{ mb: 5, mx: 'auto', textAlign: 'center' }}>业务范围</Typography>
-          <Box>
-            <Grid container spacing={3} sx={{
+        <Container sx={{
+          py: 10,
+          '.about_img': {
+            width: '100%',
+            'img': {
               width: '100%',
-              textAlign: 'center',
-              'div': {
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                '.icon_box': {
-                  cursor: 'pointer',
-                  ":hover": {
-                    'img': {
-                      transform: 'scale(1.2)',
-                      transition: '.3s'
-                    }
-                  }
-                },
-                'img': {
-                  display: 'block',
-                  borderRadius: '50%',
-                  overflow: 'hidden',
-                  boxShadow: '0px 0px 21px -5px rgba(178.00336174342945, 194.49609495065613, 208.34999084472656, 0.5)',
-                  mb: 1
-                }
-              }
-            }}>
-              <Grid item xs={6} md={2}>
-                <div className='icon_box'>
-                  <img src="/images/app-icon.png" alt=''></img>
-                  <span>APP定制</span>
-                </div>
+              objectFit: 'cover'
+            }
+          }
+        }}>
+          <Typography variant='h4'
+            sx={{ mb: 5 }}>关于我们</Typography>
+          <Box>
+            <Grid container spacing={3}>
+              <Grid item xs={12} md={7} sx={{ pr: 10 }}>
+                <Typography gutterBottom>济南漫点信息科技是一家专注于互联网项目定制开发的公司，成立于 2019 年。公司技术前沿，擅于从 0 开发各类创新型应用。</Typography>
+                <Typography gutterBottom>公司主营业务涵盖多个行业和领域，包括区块链、人工智能、物联网、Sass 系统、教育、医疗等。公司致力于为客户提供高质量、高性价比的项目开发服务，帮助客户实现业务目标。</Typography>
+                <Typography gutterBottom>公司拥有一支经验丰富的技术团队，成员具有丰富的项目开发经验，擅长使用各种前沿技术。</Typography>
+                <Typography gutterBottom>公司拥有完善的项目管理流程，确保项目按时、高质量完成。公司还提供售后支持，帮助客户解决项目使用过程中遇到的问题。</Typography>
+
               </Grid>
-              <Grid item xs={6} md={2}>
-                <div className='icon_box'>
-                  <img src="/images/wx-icon.png" alt=''></img>
-                  <span>微信小程序</span>
-                </div>
-              </Grid>
-              <Grid item xs={6} md={2}>
-                <div className='icon_box'>
-                  <img src="/images/web-icon.png" alt=''></img>
-                  <span>网站建设</span>
-                </div>
-              </Grid>
-              <Grid item xs={6} md={2}>
-                <div className='icon_box'>
-                  <img src="/images/ui-icon.png" alt=''></img>
-                  <span>UI设计</span>
-                </div>
-              </Grid>
-              <Grid item xs={6} md={2}>
-                <div className='icon_box'>
-                  <img src="/images/b-icon.png" alt=''></img>
-                  <span>区块链</span>
-                </div>
-              </Grid>
-              <Grid item xs={6} md={2}>
-                <div className='icon_box'>
-                  <img src="/images/settings-icon.png" alt=''></img>
-                  <span>升级维护</span>
+              <Grid item xs={6} md={5}>
+                <div className='about_img'>
+                  <img src="/images/industry.jpeg" alt=''></img>
                 </div>
               </Grid>
             </Grid>
           </Box>
         </Container>
       </Box>
+      {/* <Box style={{ background: "#f7f6f9" }}>
+        <Container maxWidth="xl" sx={{
+          py: 10,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: "center",
+          alignItems: 'center'
+        }}>
+          <Typography variant='h3' sx={{ mb: 5 }}>服务流程</Typography>
+          <img src="/images/process.png" style={{ width: '100%' }} alt='' />
+        </Container>
+      </Box> */}
       <Box>
-        <Container maxWidth="xl" sx={{ py: 10, color: "#fff" }}>
-          <Typography variant='h3' sx={{ mb: 5, textAlign: 'center' }}>我们的优势</Typography>
-          <Grid container spacing={3} sx={{ px: 10 }}>
+        <Container sx={{ py: 10, color: "#fff" }}>
+          <Typography variant='h4' sx={{ mb: 5 }}>我们的优势</Typography>
+          <Grid container spacing={3}>
             <Grid item xs={6} md={3} sx={{ display: 'flex', alignItems: 'center' }}>
               <BoltIcon sx={{
-                mr: 2, fontSize: 56, color: pink[500],
+                mr: 2, fontSize: 46, color: pink[500],
                 bgcolor: "#fff", borderRadius: 2, p: 1
               }} />
               <Box>
-                <Typography variant="h4" gutterBottom>前沿</Typography>
-                <Typography color="white.600">
-                  使用更前沿的开发技术框架, <br />
-                  更前沿的设计语言,<br />
+                <Typography variant="h5" gutterBottom>前沿</Typography>
+                <Typography variant='h7' color="white.600">
+                  使用更前沿的开发技术框架<br />
+                  更前沿的设计语言<br />
                   更前沿的协作方式
                 </Typography>
               </Box>
@@ -121,14 +152,14 @@ function HomePage() {
             <Grid item xs={6} md={3} sx={{ display: 'flex', alignItems: 'center' }}>
               <HealthAndSafetyIcon sx={{
                 mr: 2,
-                fontSize: 56,
+                fontSize: 46,
                 color: amber[500],
                 bgcolor: "#fff",
                 borderRadius: 2, p: 1
               }} />
               <Box>
-                <Typography variant="h4" gutterBottom>安全</Typography>
-                <Typography color="white.600">
+                <Typography variant="h5" gutterBottom>安全</Typography>
+                <Typography variant='h7' color="white.600">
                   严格遵循语言框架安全开发规范<br />
                   完整的代码覆盖率测试<br />
                   安全渗透测试
@@ -138,23 +169,22 @@ function HomePage() {
             <Grid item xs={6} md={3} sx={{ display: 'flex', alignItems: 'center' }}>
               <LightbulbIcon sx={{
                 mr: 2,
-                fontSize: 56, color: lime[500],
+                fontSize: 46, color: lime[500],
                 bgcolor: "#fff", borderRadius: 2, p: 1
               }} />
               <Box>
-                <Typography variant="h4" gutterBottom>创新</Typography>
-                <Typography color="white.600">
+                <Typography variant="h5" gutterBottom>创新</Typography>
+                <Typography variant='h7' color="white.600">
                   了解并剖析众多创新应用核心原理<br />
-                  可以快速复制市场新兴产品<br />
-                  可独立快速多产创新型产品应用
+                  可以快速复制市场新兴产品
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={6} md={3} sx={{ display: 'flex', alignItems: 'center' }}>
-              <GroupsIcon sx={{ mr: 2, fontSize: 56, color: blue[500], bgcolor: "#fff", borderRadius: 2, p: 1 }} />
+              <GroupsIcon sx={{ mr: 2, fontSize: 46, color: blue[500], bgcolor: "#fff", borderRadius: 2, p: 1 }} />
               <Box>
-                <Typography variant="h4" gutterBottom>高效</Typography>
-                <Typography color="white.600">
+                <Typography variant="h5" gutterBottom>高效</Typography>
+                <Typography variant='h7' color="white.600">
                   具备高效专业的研发团队<br />
                   拥有上百款产品研发经验<br />
                   让每个环节更高效更舒适
@@ -165,7 +195,7 @@ function HomePage() {
         </Container>
       </Box>
       <Box style={{ background: "#fff" }}>
-        <Container maxWidth="xl" sx={{
+        <Container sx={{
           py: 10,
           display: 'flex',
           flexDirection: 'column',
@@ -173,12 +203,11 @@ function HomePage() {
           alignItems: 'center',
           position: 'relative',
         }}>
-          <Typography variant='h3' sx={{ mb: 5 }}>案例展示</Typography>
+          <Typography variant='h4' sx={{ mb: 5, width: '100%' }}>案例展示</Typography>
           <Box sx={{
             width: '100%',
             '.swiper': {
               height: 'auto',
-              mx: 10,
               '.swiper_banner': {
                 width: '100%'
               },
@@ -192,7 +221,7 @@ function HomePage() {
                 'div': {
                   cursor: 'pointer',
                   mx: 5,
-                  p: 2,
+                  pl: 2,
                   py: 1,
                 },
               }
@@ -204,79 +233,90 @@ function HomePage() {
               onSlideChange={() => console.log('slide change')}
               onSwiper={(swiper) => console.log(swiper)}
             >
-              <SwiperSlide>
+              {caselist.map((row, key) => <SwiperSlide key={key}>
                 <Grid container>
-                  <Grid item xs={12} md={6} sx={{ overflow: 'hidden' }}>
-                    <img className='swiper_banner' src='/images/banner.jpg' alt='' />
+                  <Grid item xs={12} md={7} sx={{ overflow: 'hidden' }}>
+                    {/* <img className='swiper_banner' src={row.image} alt='' /> */}
+                    <Box sx={{
+                      height: 360,
+                      position: 'relative',
+                      overflow: 'hidden',
+                      boxShadow: '1px 10px 5px 10px #333'
+                    }}>
+                      <img style={{
+                        width: '110%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        display: 'block'
+                      }} src={row.image} alt='' />
+                    </Box>
                   </Grid>
-                  <Grid item xs={12} md={6}>
-                    <Box sx={{ px: 5, py: 2, pb: 10 }}>
-                      <Typography variant='h4' gutterBottom>案例1</Typography>
-                      <Typography>案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍介绍案例介绍案例介绍案案例介绍案例绍介绍案例介绍案例介绍案案例介绍案例绍介绍案例介绍案例介绍案案例介绍案例绍介绍案例介绍案例介绍案案例介绍案例绍介绍案例介绍案例介绍案案例介绍案例绍介绍案例介绍案例介绍案案例介绍案例介绍案例介绍案例例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍</Typography>
+                  <Grid item xs={12} md={5}>
+                    <Box sx={{ pl: 6, py: 2, pb: 10 }}>
+                      <Typography variant='h5' gutterBottom>{row.title}</Typography>
+                      {row.introduction.map((r, k) => <Typography key={k} gutterBottom>{r}</Typography>)}
                     </Box>
                   </Grid>
                 </Grid>
-              </SwiperSlide>
-              <SwiperSlide>
-                <Grid container>
-                  <Grid item xs={12} md={6} sx={{ overflow: 'hidden' }}>
-                    <img className='swiper_banner' src='/images/banner.jpg' alt='' />
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <Box sx={{ px: 5, py: 2, pb: 10 }}>
-                      <Typography variant='h4' gutterBottom>案例1</Typography>
-                      <Typography>案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍介绍案例介绍案例介绍案案例介绍案例绍介绍案例介绍案例介绍案案例介绍案例绍介绍案例介绍案例介绍案案例介绍案例绍介绍案例介绍案例介绍案案例介绍案例绍介绍案例介绍案例介绍案案例介绍案例绍介绍案例介绍案例介绍案案例介绍案例介绍案例介绍案例例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍</Typography>
-                    </Box>
-                  </Grid>
-                </Grid>
-              </SwiperSlide>
+              </SwiperSlide>)}
               <div className='control'>
                 <SlidePrevButton />
                 <SlideNextButton />
-                {/* <div className="swiper-button-prev" onClick={() => swiper.slidePrev()}>
-                  <KeyboardArrowLeftIcon sx={{ fontSize: 50 }} />
-                </div>
-                <div className="swiper-button-next" onClick={() => swiper.slideNext()}>
-                  <KeyboardArrowRightIcon sx={{ fontSize: 50 }} />
-                </div> */}
               </div>
             </Swiper>
           </Box>
         </Container>
       </Box>
-      <Box style={{ background: "#fff" }}>
-        <Container maxWidth="xl" sx={{
-          py: 10,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: "center",
-          alignItems: 'center'
-        }}>
-          <Typography variant='h3' sx={{ mb: 5 }}>服务流程</Typography>
-          <img src="/images/process.png" style={{ width: '100%' }} alt='' />
-        </Container>
-      </Box>
-      <Box sx={{ backgroundColor: 'grey.100', py: 10, alignItems: 'center' }}>
-        <Container maxWidth="xl">
-          <Grid container spacing={3} sx={{ px: 10 }}>
-            <Grid item xs={12} md={5} sx={{ 'img': { width: '100%' } }}>
-              <img src="/images/banner.jpg" alt="" />
+      <Box sx={{ backgroundColor: '#f7f6f9', py: 10, alignItems: 'center' }}>
+        <Container>
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={6} sx={{ height: 350, 'img': { width: '100%' } }}>
+              <Map
+                amapkey="0f969a22ab41e6bf775642a51aabdc6f"
+                plugins={{
+
+                }}
+                center={{ longitude: 117.109517, latitude: 36.695167 }}
+                zoom={14}
+              >
+                <Marker position={{ longitude: 117.109517, latitude: 36.695167 }} />
+              </Map>
             </Grid>
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} md={5}>
               <Box sx={{
-                // mx: 5,
+                ml: 5,
                 display: 'flex',
                 flexDirection: 'column',
-                alignSelf: 'center',
                 height: '100%',
-                justifyContent: 'center',
-                'h4': {
-                  color: blue[400]
-                }
               }}>
-                <Typography variant="h4">济南漫点信息科技有限公司</Typography>
-                <Typography variant="h4" gutterBottom>---专注于创业，创新型互联网产品研发</Typography>
-                <Typography variant='h6' gutterBottom>专业,独特的产品设计理论, 完全定制化研发, 高效的开发流程, 助您迈出创业第一步. 不止是写代码, 我们替您梳理产品需求, 确定产品功能, 制定产品设计方案, 规划升级， 曾帮客户打造多款精品应用，获得千万级项目融资，区块链合约项目单日最高盈利70万。</Typography>
+                <Typography variant="h5" gutterBottom>济南漫点信息科技有限公司</Typography>
+                <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>公司地址</Typography>
+                <Typography gutterBottom>山东省济南市花园东路88号</Typography>
+                <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>联系电话</Typography>
+                <Typography gutterBottom>18743238391</Typography>
+                <Box sx={{ flex: 1 }}></Box>
+                <Box sx={{
+                  display: 'flex', textAlign: 'center',
+                  'div': {
+                    mr: 2,
+                  },
+                  'img': {
+                    width: '60px'
+                  }
+                }}>
+                  <Box>
+                    <img src="/images/mdian.png" alt=''></img>
+                    <Typography>微信</Typography>
+                  </Box>
+                  <Box>
+                    <img src="/images/mdian.png" alt=''></img>
+                    <Typography>公众号</Typography>
+                  </Box>
+                  <Box>
+                    <img src="/images/mdian.png" alt=''></img>
+                    <Typography>小红书</Typography>
+                  </Box>
+                </Box>
               </Box>
             </Grid>
           </Grid>

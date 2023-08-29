@@ -15,29 +15,39 @@ export default function Footer() {
         color: "#fff",
         py: 6,
       }}>
-        <Container maxWidth='xl' sx={{
-          '@media screen and (max-width:900px)':{
-            textAlign:'center',
-            '.MuiGrid-grid-xs-12':{
-              mb:2,
+        <Container sx={{
+          '@media screen and (max-width:900px)': {
+            textAlign: 'center',
+            '.MuiGrid-grid-xs-12': {
+              mb: 2,
             },
           }
         }}>
-          <Grid container sx={{px:10}}>
-            <Grid item xs={12} md={5}>
-              <Typography variant='h4' gutterBottom>联系我们</Typography>
-              <Typography gutterBottom>电话：13145312751</Typography>
-              <Typography gutterBottom>邮箱：mandiankeji@163.com</Typography>
-              <Typography gutterBottom>微信：mandian1927</Typography>
-              <Typography>地址：济南市历下区盛景广场A座1606室</Typography>
+          <Grid container sx={{
+            'div': {
+              'h5': {
+                mb: 2
+              }
+            }
+          }}>
+            <Grid item xs={12} md={4}>
+              <Typography variant='h5' gutterBottom>快速入口</Typography>
+              <Typography gutterBottom>关于我们</Typography>
+              <Typography gutterBottom>联系我们</Typography>
+              <Typography>产品案例</Typography>
             </Grid>
-            <Grid item xs={12} md={5}>
-              <Typography variant='h4' gutterBottom>案例展示</Typography>
-              <Typography gutterBottom>微信小程序</Typography>
-              <Typography gutterBottom>Android/IOS移动端</Typography>
-              <Typography>网站设计</Typography>
+            <Grid item xs={12} md={4}>
+              <Typography variant='h5' gutterBottom>我们的产品</Typography>
+              <Typography gutterBottom>Paper交互式文档</Typography>
+              <Typography gutterBottom>HISOUL虚拟社交</Typography>
+              <Typography>DSOOU WORK</Typography>
             </Grid>
-            <Grid item xs={12} md={2}>
+            <Grid item xs={12} md={4}>
+              <Typography variant='h5' gutterBottom>友情链接</Typography>
+              <Typography gutterBottom>日照异域科技</Typography>
+              <Typography gutterBottom>陕西朗逸科技文化</Typography>
+            </Grid>
+            {/* <Grid item xs={12} md={2}>
               <Box sx={{
                 textAlign: 'center',
                 'img': {
@@ -49,7 +59,7 @@ export default function Footer() {
                 </div>
                 <Typography>详情咨询</Typography>
               </Box>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Container>
       </Box>

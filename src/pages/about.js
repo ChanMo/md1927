@@ -1,6 +1,5 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import Layout from "../components/Layout";
-import { Map, Marker } from "react-amap";
 
 function AboutPage() {
   return <Layout banner={'/images/banner.jpg'} bannerContent={
@@ -29,7 +28,7 @@ function AboutPage() {
 
         </Box>
       </Container>
-      <Container>
+      {/* <Container>
         <Grid container spacing={3}>
           <Grid item sm={12} md={5} sx={{ 'img': { width: '100%' } }}>
             <Box sx={{ height: 320 }}>
@@ -62,7 +61,7 @@ function AboutPage() {
             </Box>
           </Grid>
         </Grid>
-      </Container>
+      </Container> */}
     </Box>
   </Layout>
 }

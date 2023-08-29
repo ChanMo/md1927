@@ -33,7 +33,7 @@ export default function Layout({
             backgroundSize: 'cover'
           }} />
         <Box sx={{ height: 700, paddingTop: '64px' }}>{bannerContent}</Box>
-      </Box> : null}
+      </Box> : <Box sx={{ paddingTop: '64px' }}></Box>}
       {children}
     </Box>
   )

@@ -4,27 +4,22 @@ import {
   AppBar,
   Typography,
   Button,
-  Menu,
-  MenuItem,
-  Box,
-  Link
 } from '@mui/material'
-import { useState } from 'react'
 
 
 export default function Navbar() {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl)
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => { setAnchorEl(null) }
+  // const [anchorEl, setAnchorEl] = useState(null);
+  // const open = Boolean(anchorEl)
+  // const handleClick = (event) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+  // const handleClose = () => { setAnchorEl(null) }
   return (
     <AppBar position="fixed" color="transparent" sx={{
       boxShadow: 'none',
       background: 'rgba(255,255,255,0.9)'
     }}>
-      <Container maxWidth="xl">
+      <Container>
         <Toolbar>
           <Typography
             variant="h6"
@@ -36,7 +31,8 @@ export default function Navbar() {
             }}>
             济南漫点信息科技有限公司
           </Typography>
-          <div>
+          <div style={{ flex: 1 }}></div>
+          {/* <div>
             <Button
               id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}
@@ -74,8 +70,9 @@ export default function Navbar() {
                 </MenuItem>
               </Box>
             </Menu>
-          </div>
-          <Button href="/about">关于我们</Button>
+          </div> */}
+          {/* <Button href="/case">案例展示</Button> */}
+          <Button sx={{ color: "#333" }} href="/about">关于我们</Button>
         </Toolbar>
       </Container>
     </AppBar>
