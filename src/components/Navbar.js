@@ -37,7 +37,7 @@ export default function Navbar() {
               }
             }}>
             <img src='/images/logo_md1927.svg' alt='' />
-            <span>济南漫点信息科技有限公司</span>
+            <span>济南漫点信息科技</span>
           </Typography>
           <div style={{ flex: 1 }}></div>
           {/* <div>

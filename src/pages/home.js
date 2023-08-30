@@ -92,18 +92,18 @@ function HomePage() {
               </Typography>
               <Button variant="outlined"
                 sx={{
-                  // borderColor: "#333",
+                  borderColor: "#6C63FF",
                   width: 'fit-content',
                   p: 0,
                   'a': {
-                    color: "rgba(25, 118, 210, 0.8)",
+                    color: "#6C63FF",
                     py: 0.6,
                     px: 1.5,
                     textDecoration: 'none',
                     display: 'block',
                   }
                 }}>
-                <a href='mailto:mandiankeji@163.com' target='__blank'>联系我们</a>
+                <a href='mailto:chan.mo@outlook.com' target='__blank'>联系我们</a>
               </Button>
             </Grid>
             <Grid item xs={12} md={5} sx={{
@@ -113,7 +113,7 @@ function HomePage() {
                 width: '100%'
               }
             }}>
-              <img src='/images/team_.png' alt='' />
+              <img src='/images/team_.svg' alt='' />
             </Grid>
           </Grid>
         </Container>}>
@@ -169,11 +169,23 @@ function HomePage() {
           <img src="/images/process.png" style={{ width: '100%' }} alt='' />
         </Container>
       </Box> */}
-      <Box>
+      <Box sx={{background:"#fff"}}>
         <Container sx={{ py: 10 }}>
           <Typography variant='h4' sx={{ mb: 5 }}>我们的优势</Typography>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={3} sx={{
+          <Grid container spacing={3} sx={{
+            '.svg_box': {
+              ':hover': {
+                'svg': {
+                  // transition:'0.2s',
+                  // transform: 'scale(1.2)'
+                }
+              }
+            },
+            'svg': {
+              boxShadow: '1px 1px 20px 1px rgba(0,0,0,0.03)'
+            },
+          }}>
+            <Grid item className='svg_box' xs={12} md={3} sx={{
               display: 'flex', alignItems: 'center',
               '@media screen and (max-width:900px)': {
                 justifyContent: 'center'
@@ -182,7 +194,7 @@ function HomePage() {
               <BoltIcon sx={{
                 mr: 2, fontSize: 46,
                 color: pink[500],
-                bgcolor: "#536DFE",
+                bgcolor: "#fff",
                 borderRadius: 2, p: 1
               }} />
               <Box sx={{ width: 240 }}>
@@ -194,7 +206,7 @@ function HomePage() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3} sx={{
+            <Grid item className='svg_box' xs={12} md={3} sx={{
               display: 'flex', alignItems: 'center',
               '@media screen and (max-width:900px)': {
                 justifyContent: 'center'
@@ -204,7 +216,7 @@ function HomePage() {
                 mr: 2,
                 fontSize: 46,
                 color: amber[500],
-                bgcolor: "#00BFA6",
+                bgcolor: "#fff",
                 borderRadius: 2, p: 1
               }} />
               <Box sx={{ width: 240 }}>
@@ -216,7 +228,7 @@ function HomePage() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3} sx={{
+            <Grid item className='svg_box' xs={12} md={3} sx={{
               display: 'flex', alignItems: 'center',
               '@media screen and (max-width:900px)': {
                 justifyContent: 'center'
@@ -226,7 +238,7 @@ function HomePage() {
                 mr: 2,
                 fontSize: 46,
                 color: lime[500],
-                bgcolor: "#00B0FF",
+                bgcolor: "#fff",
                 borderRadius: 2, p: 1
               }} />
               <Box sx={{ width: 240 }}>
@@ -237,7 +249,7 @@ function HomePage() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3} sx={{
+            <Grid item className='svg_box' xs={12} md={3} sx={{
               display: 'flex', alignItems: 'center',
               '@media screen and (max-width:900px)': {
                 justifyContent: 'center'
@@ -246,7 +258,7 @@ function HomePage() {
               <GroupsIcon sx={{
                 mr: 2, fontSize: 46,
                 color: blue[500],
-                bgcolor: "#F9A826",
+                bgcolor: "#fff",
                 borderRadius: 2, p: 1
               }} />
               <Box sx={{ width: 240 }}>
@@ -319,8 +331,7 @@ function HomePage() {
                     }}>
                       <img style={{
                         width: '110%',
-                        height: '100%',
-                        objectFit: 'cover',
+                        // height: '100%',
                         display: 'block'
                       }} src={row.image} alt='' />
                     </Box>
@@ -329,8 +340,7 @@ function HomePage() {
                     <Box sx={{
                       pl: 6, py: 2, pb: 10,
                       '@media screen and (max-width:900px)': {
-                        pl: 3,
-                        pr: 3
+                        px: 0
                       }
                     }}>
                       <Typography variant='h5' gutterBottom>{row.title}</Typography>
@@ -361,7 +371,7 @@ function HomePage() {
           </Box>
         </Container>
       </Box >
-      <Box sx={{ backgroundColor: '#f7f6f9', py: 10, alignItems: 'center' }}>
+      <Box sx={{ backgroundColor: 'rgba(0,0,0,0.02)', py: 10, alignItems: 'center' }}>
         <Container>
           <Typography variant='h4' sx={{ mb: 5, width: '100%' }}>联系我们</Typography>
           <Grid container spacing={3}>
@@ -383,7 +393,9 @@ function HomePage() {
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
-
+                '@media screen and (max-width:900px)': {
+                  mx: 0
+                }
               }}>
                 <Typography variant="h5" gutterBottom>济南漫点信息科技有限公司</Typography>
                 <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>公司地址</Typography>
@@ -391,7 +403,7 @@ function HomePage() {
                 <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>联系电话</Typography>
                 <Typography gutterBottom>18743238391</Typography>
                 <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>联系邮箱</Typography>
-                <Typography sx={{ mb: 3 }} gutterBottom>mandiankeji@163.com</Typography>
+                <Typography sx={{ mb: 3 }} gutterBottom>chan.mo@outlook.com</Typography>
                 <Box sx={{ flex: 1 }}></Box>
                 <Box sx={{
                   display: 'flex', textAlign: 'center',

@@ -18,7 +18,7 @@ export default function Layout({
           width: '100vw',
           height: '100vh',
           zIndex: '-1',
-          background: banner ? 'rgba(0,0,0,0.4)' : '#fff'
+          background: 'rgba(0,0,0,0.02)'
         }}>
         </Box>
         {banner ? <Box

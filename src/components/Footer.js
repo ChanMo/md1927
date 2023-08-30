@@ -36,9 +36,6 @@ export default function Footer() {
                 ":hover": {
                   textDecorationColor: grey[200]
                 }
-              },
-              '@media screen and (max-width:900px)': {
-                mx: 5,
               }
             }
           }}>
