@@ -17,7 +17,6 @@ export default function Footer() {
       }}>
         <Container sx={{
           '@media screen and (max-width:900px)': {
-            textAlign: 'center',
             '.MuiGrid-grid-xs-12': {
               mb: 2,
             },
@@ -26,19 +25,26 @@ export default function Footer() {
           <Grid container sx={{
             'div': {
               'h5': {
-                mb: 2
+                mb: 2,
               },
               'a': {
                 color: grey[200],
                 display: 'block',
                 mb: 1,
-                width:'fit-content'
+                width: 'fit-content',
+                textDecorationThickness: '.5px',
+                ":hover": {
+                  textDecorationColor: grey[200]
+                }
+              },
+              '@media screen and (max-width:900px)': {
+                mx: 5,
               }
             }
           }}>
             <Grid item xs={12} md={4}>
               <Typography variant='h5' gutterBottom>快速入口</Typography>
-              <Link href="/about">关于我们</Link>
+              <Typography>关于我们</Typography>
               {/* <Typography gutterBottom>联系我们</Typography> */}
               {/* <Typography>产品案例</Typography> */}
             </Grid>

@@ -34,7 +34,7 @@ function HomePage() {
       type: 'gsp',
       createAt: '2021年3月13日',
       image: '/cases/gsp/gsp0.jpg',
-      introduction: ['项目管理', '数据分析', '大屏数据实时展示'],
+      introduction: ['特色化项目管理平台', '数据分析', '大屏数据实时展示'],
       tags: ['Sass', '数据分析']
     },
     {
@@ -65,56 +65,58 @@ function HomePage() {
     }
   ]
   return (
-    <Layout banner={'/images/banner.jpg'} bannerContent={
-      <Container sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%'
-      }}>
-        <Grid container>
-          <Grid item xs={12} md={7} sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            '@media screen and (max-width:900px)': {
-              textAlign: 'center',
-              alignItems: 'center'
-            }
-          }}>
-            <Typography variant="h3" gutterBottom color="white">
-              专注于创新应用开发
-            </Typography>
-            <Typography variant="h5" paddingBottom={4} gutterBottom color="white">
-              科技创新，引领未来
-            </Typography>
-            <Button variant="outlined"
-              sx={{
-                borderColor: "#fff",
-                width: 'fit-content',
-                p:0,
-                'a': {
-                  color: "#fff",
-                  py:0.6,
-                  px:1.5,
-                  textDecoration: 'none',
-                  display:'block',
-                }
-              }}>
-              <a href='mailto:mandiankeji@163.com' target='__blank'>联系我们</a>
-            </Button>
+    <Layout
+      // banner={'/images/banner.jpg'}
+      bannerContent={
+        <Container sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}>
+          <Grid container>
+            <Grid item xs={12} md={7} sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              '@media screen and (max-width:900px)': {
+                textAlign: 'center',
+                alignItems: 'center'
+              }
+            }}>
+              <Typography variant="h3" gutterBottom>
+                专注于创新应用开发
+              </Typography>
+              <Typography variant="h5" paddingBottom={4} gutterBottom>
+                科技创新，引领未来
+              </Typography>
+              <Button variant="outlined"
+                sx={{
+                  // borderColor: "#333",
+                  width: 'fit-content',
+                  p: 0,
+                  'a': {
+                    color: "rgba(25, 118, 210, 0.8)",
+                    py: 0.6,
+                    px: 1.5,
+                    textDecoration: 'none',
+                    display: 'block',
+                  }
+                }}>
+                <a href='mailto:mandiankeji@163.com' target='__blank'>联系我们</a>
+              </Button>
+            </Grid>
+            <Grid item xs={12} md={5} sx={{
+              '@media screen and (max-width:900px)': {
+                display: 'none'
+              }, 'img': {
+                width: '100%'
+              }
+            }}>
+              <img src='/images/team_.png' alt='' />
+            </Grid>
           </Grid>
-          <Grid item xs={12} md={5} sx={{
-            '@media screen and (max-width:900px)': {
-              display: 'none'
-            }, 'img': {
-              width: '100%'
-            }
-          }}>
-            <img src='/images/team.jpg' alt='' />
-          </Grid>
-        </Grid>
-      </Container>}>
+        </Container>}>
       <Box style={{ background: "#fff" }}>
         <Container sx={{
           py: 10,
@@ -148,7 +150,7 @@ function HomePage() {
                 },
               }}>
                 <div className='about_img'>
-                  <img src="/images/industry.jpeg" alt=''></img>
+                  <img src="/images/Educator.png" alt=''></img>
                 </div>
               </Grid>
             </Grid>
@@ -168,7 +170,7 @@ function HomePage() {
         </Container>
       </Box> */}
       <Box>
-        <Container sx={{ py: 10, color: "#fff" }}>
+        <Container sx={{ py: 10 }}>
           <Typography variant='h4' sx={{ mb: 5 }}>我们的优势</Typography>
           <Grid container spacing={3}>
             <Grid item xs={12} md={3} sx={{
@@ -178,8 +180,10 @@ function HomePage() {
               },
             }}>
               <BoltIcon sx={{
-                mr: 2, fontSize: 46, color: pink[500],
-                bgcolor: "#fff", borderRadius: 2, p: 1
+                mr: 2, fontSize: 46,
+                color: pink[500],
+                bgcolor: "#536DFE",
+                borderRadius: 2, p: 1
               }} />
               <Box sx={{ width: 240 }}>
                 <Typography variant="h5" gutterBottom>前沿</Typography>
@@ -200,7 +204,7 @@ function HomePage() {
                 mr: 2,
                 fontSize: 46,
                 color: amber[500],
-                bgcolor: "#fff",
+                bgcolor: "#00BFA6",
                 borderRadius: 2, p: 1
               }} />
               <Box sx={{ width: 240 }}>
@@ -220,8 +224,10 @@ function HomePage() {
             }}>
               <LightbulbIcon sx={{
                 mr: 2,
-                fontSize: 46, color: lime[500],
-                bgcolor: "#fff", borderRadius: 2, p: 1
+                fontSize: 46,
+                color: lime[500],
+                bgcolor: "#00B0FF",
+                borderRadius: 2, p: 1
               }} />
               <Box sx={{ width: 240 }}>
                 <Typography variant="h5" gutterBottom>创新</Typography>
@@ -237,7 +243,12 @@ function HomePage() {
                 justifyContent: 'center'
               },
             }}>
-              <GroupsIcon sx={{ mr: 2, fontSize: 46, color: blue[500], bgcolor: "#fff", borderRadius: 2, p: 1 }} />
+              <GroupsIcon sx={{
+                mr: 2, fontSize: 46,
+                color: blue[500],
+                bgcolor: "#F9A826",
+                borderRadius: 2, p: 1
+              }} />
               <Box sx={{ width: 240 }}>
                 <Typography variant="h5" gutterBottom>高效</Typography>
                 <Typography variant='h7' color="white.600">
@@ -270,14 +281,15 @@ function HomePage() {
               '.control': {
                 position: 'absolute',
                 right: 0,
-                width:'40%',
+                width: '40%',
                 bottom: 0,
                 zIndex: 1,
                 display: 'flex',
                 flexDirection: 'row',
                 alignItems: 'center',
-                '@meida screen and (max-width:900px)':{
-                  width:'100%'
+                '@media screen and (max-width:900px)': {
+                  width: '100%',
+                  justifyContent: 'center'
                 },
                 'div': {
                   cursor: 'pointer',
@@ -351,8 +363,9 @@ function HomePage() {
       </Box >
       <Box sx={{ backgroundColor: '#f7f6f9', py: 10, alignItems: 'center' }}>
         <Container>
+          <Typography variant='h4' sx={{ mb: 5, width: '100%' }}>联系我们</Typography>
           <Grid container spacing={3}>
-            <Grid item xs={12} md={6} sx={{ height: 350, 'img': { width: '100%' } }}>
+            <Grid item xs={12} md={6} sx={{ height: 420, 'img': { width: '100%' } }}>
               <Map
                 amapkey="0f969a22ab41e6bf775642a51aabdc6f"
                 plugins={{
@@ -377,6 +390,8 @@ function HomePage() {
                 <Typography gutterBottom>山东省济南市花园东路88号</Typography>
                 <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>联系电话</Typography>
                 <Typography gutterBottom>18743238391</Typography>
+                <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>联系邮箱</Typography>
+                <Typography sx={{ mb: 3 }} gutterBottom>mandiankeji@163.com</Typography>
                 <Box sx={{ flex: 1 }}></Box>
                 <Box sx={{
                   display: 'flex', textAlign: 'center',

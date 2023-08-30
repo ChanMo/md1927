@@ -22,13 +22,22 @@ export default function Navbar() {
       <Container>
         <Toolbar>
           <Typography
-            variant="h7"
+            variant="h6"
             href="/"
             color="dark" component="a" sx={{
               color: '#333',
-              textDecoration: 'none'
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              display: 'flex',
+              alignItems: 'center',
+              'img': {
+                height: 32,
+                width: 32,
+                mr: 1
+              }
             }}>
-            济南漫点信息科技有限公司
+            <img src='/images/logo_md1927.svg' alt='' />
+            <span>济南漫点信息科技有限公司</span>
           </Typography>
           <div style={{ flex: 1 }}></div>
           {/* <div>
@@ -71,7 +80,7 @@ export default function Navbar() {
             </Menu>
           </div> */}
           {/* <Button href="/case">案例展示</Button> */}
-          <Button sx={{ color: "#333" }} href="/about">关于我们</Button>
+          {/* <Button sx={{ color: "#333" }} href="/about">关于我们</Button> */}
         </Toolbar>
       </Container>
     </AppBar>
