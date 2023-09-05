@@ -7,7 +7,6 @@ import {
   ButtonGroup,
 } from '@mui/material'
 import { useState } from 'react';
-import ReactIntlUniversalExample from '../i18n/transfer';
 
 
 export default function Navbar(props) {

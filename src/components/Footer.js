@@ -6,9 +6,8 @@ import {
   Container
 } from '@mui/material'
 import { blue, grey } from '@mui/material/colors'
-import intl from 'react-intl-universal';
 
-export default function Footer() {
+export default function Footer({ intl }) {
   return (
     <Box>
       <Box sx={{
@@ -42,20 +41,18 @@ export default function Footer() {
           }}>
             <Grid item xs={12} md={4}>
               <Typography variant='h5' gutterBottom>{intl.get("footer.entry.title")}</Typography>
-              <Typography>{intl.get("footer.entry.items")[0]}</Typography>
-              {/* <Typography gutterBottom>联系我们</Typography> */}
-              {/* <Typography>产品案例</Typography> */}
+              <Typography>{intl.get("footer.entry.items.0")}</Typography>
             </Grid>
             <Grid item xs={12} md={4}>
               <Typography variant='h5' gutterBottom>{intl.get("footer.product.title")}</Typography>
-              <Link href="https://paper.md1927.com/" target='__blank'>{intl.get("footer.product.items")[0]}</Link>
-              <Link href="https://hisoul.md1927.com/" target='__blank'>{intl.get("footer.product.items")[1]}</Link>
-              <Link href="https://work.md1927.com/" target='__blank'>{intl.get("footer.product.items")[2]}</Link>
+              <Link href="https://paper.md1927.com/" target='__blank'>{intl.get("footer.product.items.0")}</Link>
+              <Link href="https://hisoul.md1927.com/" target='__blank'>{intl.get("footer.product.items.1")}</Link>
+              <Link href="https://work.md1927.com/" target='__blank'>{intl.get("footer.product.items.2")}</Link>
             </Grid>
             <Grid item xs={12} md={4}>
               <Typography variant='h5' gutterBottom>{intl.get("footer.link.title")}</Typography>
-              <Link href='https://www.3ykeji.com/' target='__blank'>{intl.get("footer.link.items")[0]}</Link>
-              <Link href="http://www.langyikeji.cn/" target='__blank'>{intl.get("footer.link.items")[1]}</Link>
+              <Link href='https://www.3ykeji.com/' target='__blank'>{intl.get("footer.link.items.0")}</Link>
+              <Link href="http://www.langyikeji.cn/" target='__blank'>{intl.get("footer.link.items.1")}</Link>
             </Grid>
           </Grid>
         </Container>

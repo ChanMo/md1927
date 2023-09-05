@@ -11,11 +11,12 @@ import Layout from '../components/Layout';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/css';
 import { Map, Marker } from 'react-amap';
-import { useState } from 'react';
-import intl from 'react-intl-universal'
+import { useEffect, useState } from 'react';
+import { useLocal } from '../i18n/LocalProvider';
 function HomePage() {
+  const {intl} = useLocal()
+  console.log(intl);
   const [currentIndex, setCurrentIndex] = useState(0)
-  console.log(intl.get("home.case"));
   const caselist = [
     {
       title: intl.get("home.case.dzkt.title"),
@@ -52,7 +53,7 @@ function HomePage() {
   ]
   return (
     <Layout
-      // banner={'/images/banner.jpg'}
+      // banner={intl.get("local")=='zh-US'?'/images/banner.jpg':null}
       bannerContent={
         <Container sx={{
           display: 'flex',
@@ -122,7 +123,7 @@ function HomePage() {
                 pr: 10,
                 '@media screen and (max-width:900px)': {
                   pr: 0
-                },
+                }
               }}>
                 {intl.get('home.about.content').map((item, index) => <Typography key={index} gutterBottom>{item}</Typography>)}
               </Grid>
@@ -343,7 +344,7 @@ function HomePage() {
           </Grid>
         </Container>
       </Box>
-    </Layout >
+    </Layout>
   );
 }
 
