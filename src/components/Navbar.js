@@ -4,7 +4,10 @@ import {
   AppBar,
   Typography,
   Button,
+  ButtonGroup,
 } from '@mui/material'
+import { useState } from 'react';
+import ReactIntlUniversalExample from '../i18n/transfer';
 
 
 export default function Navbar() {
@@ -81,6 +84,7 @@ export default function Navbar() {
           </div> */}
           {/* <Button href="/case">案例展示</Button> */}
           {/* <Button sx={{ color: "#333" }} href="/about">关于我们</Button> */}
+          <ReactIntlUniversalExample/>
         </Toolbar>
       </Container>
     </AppBar>
