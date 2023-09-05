@@ -6,8 +6,10 @@ import {
   Container
 } from '@mui/material'
 import { blue, grey } from '@mui/material/colors'
+import intl from 'react-intl-universal';
 
 export default function Footer() {
+  console.log(intl.get("footer.entry.title"));
   return (
     <Box>
       <Box sx={{
@@ -40,7 +42,7 @@ export default function Footer() {
             }
           }}>
             <Grid item xs={12} md={4}>
-              <Typography variant='h5' gutterBottom>快速入口</Typography>
+              <Typography variant='h5' gutterBottom>{intl.get("footer.entry.title")}</Typography>
               <Typography>关于我们</Typography>
               {/* <Typography gutterBottom>联系我们</Typography> */}
               {/* <Typography>产品案例</Typography> */}
