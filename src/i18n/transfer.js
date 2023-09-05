@@ -20,9 +20,11 @@ const ReactIntlUniversalExample: React.FC<any> = (props) => {
     });
   };
   const onLocaleChange = (value) => {
+    console.log(value);
     setCurrentLocale(value);
     forceUpdate();
   }
+  console.log(intl.get("local"));
   const buttons = [
     <Button key="en"
       variant={intl.get("local") == 'en-US' ? 'contained' : 'outlined'}

@@ -12,56 +12,42 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/css';
 import { Map, Marker } from 'react-amap';
 import { useState } from 'react';
-
+import intl from 'react-intl-universal'
 function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  console.log(intl.get("home.case"));
   const caselist = [
     {
-      title: 'SaaS-地质勘探平台',
+      title: intl.get("home.case.dzkt.title"),
       type: 'dzkt',
       createAt: '2021年3月13日',
       image: '/cases/dzkt/dzkt0.png',
-      introduction: [
-        '一款地质数据分析平台',
-        '通过地质数据，展示三维模型，可以实现二维切片展示，全方位查看地质状况',
-        '可以多企业多项目部署，每个项目包含多个地质点位，实现点位状态管理。',
-        '应用于轨道交通、桥梁、水电管道等需要地质分析的场景'
-      ],
-      tags: ['Sass', '地质勘探', '三维模型']
+      introduction: intl.get("home.case.dzkt.items"),
+      tags: intl.get("home.case.dzkt.tags")
     },
     {
-      title: 'Saas-高水平建设平台',
+      title: intl.get("home.case.gsp.title"),
       type: 'gsp',
       createAt: '2021年3月13日',
       image: '/cases/gsp/gsp0.jpg',
-      introduction: ['特色化项目管理平台', '数据分析', '大屏数据实时展示'],
-      tags: ['Sass', '数据分析']
+      introduction: intl.get("home.case.gsp.items"),
+      tags: intl.get("home.case.gsp.tags")
     },
     {
-      title: '教育-题库管理平台',
+      title: intl.get("home.case.tk.title"),
       type: 'tk',
       createAt: '2021年3月13日',
       image: '/cases/tk/tk5.jpg',
-      introduction: [
-        '多学校线上题库管理',
-        '创建试题试卷',
-        '导出试卷',
-        '模拟考试',
-      ],
-      tags: ['教育', '题库', '线上考试']
+      introduction: intl.get("home.case.tk.items"),
+      tags: intl.get("home.case.tk.tags")
     },
     {
-      title: '区块链-MPOC NFT交易平台',
+      title: intl.get("home.case.mpoc.title"),
       type: 'mpoc',
       createAt: '2021年3月13日',
       image: '/cases/nft/home.jpg',
-      introduction: [
-        '支持ERC1155, 兼容OpenSea等主流NFT交易平台',
-        '支持多种音频以及视频格式, 支持多种解码规格和音乐保护',
-        '现代化的在线播放器, 支持作品收藏, 音乐人收藏等',
-        '多种交易模型以及多币种支付, 安全高效',
-      ],
-      tags: ['区块链', 'NFT', '音频播放', '多币种']
+      introduction: intl.get("home.case.mpoc.items"),
+      tags: intl.get("home.case.mpoc.tags")
     }
   ]
   return (
@@ -85,10 +71,10 @@ function HomePage() {
               }
             }}>
               <Typography variant="h3" gutterBottom>
-                专注于创新应用开发
+                {intl.get('home.title')}
               </Typography>
               <Typography variant="h5" paddingBottom={4} gutterBottom>
-                科技创新，引领未来
+                {intl.get('home.subtitle')}
               </Typography>
               <Button variant="outlined"
                 sx={{
@@ -129,7 +115,7 @@ function HomePage() {
           }
         }}>
           <Typography variant='h4'
-            sx={{ mb: 5 }}>关于我们</Typography>
+            sx={{ mb: 5 }}>{intl.get('home.about.title')}</Typography>
           <Box>
             <Grid container spacing={3}>
               <Grid item xs={12} md={7} sx={{
@@ -138,11 +124,7 @@ function HomePage() {
                   pr: 0
                 },
               }}>
-                <Typography gutterBottom>济南漫点信息科技是一家专注于互联网项目定制开发的公司，成立于 2019 年。公司技术前沿，擅于从 0 开发各类创新型应用。</Typography>
-                <Typography gutterBottom>公司主营业务涵盖多个行业和领域，包括区块链、人工智能、物联网、Sass 系统、教育、医疗等。公司致力于为客户提供高质量、高性价比的项目开发服务，帮助客户实现业务目标。</Typography>
-                <Typography gutterBottom>公司拥有一支经验丰富的技术团队，成员具有丰富的项目开发经验，擅长使用各种前沿技术。</Typography>
-                <Typography gutterBottom>公司拥有完善的项目管理流程，确保项目按时、高质量完成。公司还提供售后支持，帮助客户解决项目使用过程中遇到的问题。</Typography>
-
+                {intl.get('home.about.content').map((item, index) => <Typography key={index} gutterBottom>{item}</Typography>)}
               </Grid>
               <Grid item xs={6} md={5} sx={{
                 '@media screen and (max-width:900px)': {
@@ -169,107 +151,36 @@ function HomePage() {
           <img src="/images/process.png" style={{ width: '100%' }} alt='' />
         </Container>
       </Box> */}
-      <Box sx={{background:"#fff"}}>
+      <Box sx={{ background: "#fff" }}>
         <Container sx={{ py: 10 }}>
-          <Typography variant='h4' sx={{ mb: 5 }}>我们的优势</Typography>
+          <Typography variant='h4' sx={{ mb: 5 }}>{intl.get('home.advantage.title')}</Typography>
           <Grid container spacing={3} sx={{
-            '.svg_box': {
-              ':hover': {
-                'svg': {
-                  // transition:'0.2s',
-                  // transform: 'scale(1.2)'
-                }
-              }
-            },
             'svg': {
               boxShadow: '1px 1px 20px 1px rgba(0,0,0,0.03)'
             },
           }}>
-            <Grid item className='svg_box' xs={12} md={3} sx={{
+            {intl.get('home.advantage.content').map((item, index) => <Grid key={index} item className='svg_box' xs={12} md={3} sx={{
               display: 'flex', alignItems: 'center',
-              '@media screen and (max-width:900px)': {
-                justifyContent: 'center'
-              },
-            }}>
-              <BoltIcon sx={{
+              '.advantage_icon': {
                 mr: 2, fontSize: 46,
-                color: pink[500],
                 bgcolor: "#fff",
                 borderRadius: 2, p: 1
-              }} />
-              <Box sx={{ width: 240 }}>
-                <Typography variant="h5" gutterBottom>前沿</Typography>
-                <Typography variant='h7' color="white.600">
-                  使用更前沿的开发技术框架<br />
-                  更前沿的设计语言<br />
-                  更前沿的协作方式
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item className='svg_box' xs={12} md={3} sx={{
-              display: 'flex', alignItems: 'center',
+              },
               '@media screen and (max-width:900px)': {
                 justifyContent: 'center'
               },
             }}>
-              <HealthAndSafetyIcon sx={{
-                mr: 2,
-                fontSize: 46,
-                color: amber[500],
-                bgcolor: "#fff",
-                borderRadius: 2, p: 1
-              }} />
+              {index == 0 && <BoltIcon className='advantage_icon' sx={{ color: pink[500] }} />}
+              {index == 1 && <HealthAndSafetyIcon className='advantage_icon' sx={{ color: amber[500] }} />}
+              {index == 2 && <LightbulbIcon className='advantage_icon' sx={{ color: lime[500] }} />}
+              {index == 3 && <GroupsIcon className='advantage_icon' sx={{ color: blue[500] }} />}
               <Box sx={{ width: 240 }}>
-                <Typography variant="h5" gutterBottom>安全</Typography>
+                <Typography variant="h5" gutterBottom>{item.title}</Typography>
                 <Typography variant='h7' color="white.600">
-                  严格遵循语言框架安全开发规范<br />
-                  完整的代码覆盖率测试<br />
-                  安全渗透测试
+                  {item.values.map((row, key) => <Box key={key}>{row}</Box>)}
                 </Typography>
               </Box>
-            </Grid>
-            <Grid item className='svg_box' xs={12} md={3} sx={{
-              display: 'flex', alignItems: 'center',
-              '@media screen and (max-width:900px)': {
-                justifyContent: 'center'
-              },
-            }}>
-              <LightbulbIcon sx={{
-                mr: 2,
-                fontSize: 46,
-                color: lime[500],
-                bgcolor: "#fff",
-                borderRadius: 2, p: 1
-              }} />
-              <Box sx={{ width: 240 }}>
-                <Typography variant="h5" gutterBottom>创新</Typography>
-                <Typography variant='h7' color="white.600">
-                  了解并剖析众多创新应用核心原理<br />
-                  可以快速复制市场新兴产品
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item className='svg_box' xs={12} md={3} sx={{
-              display: 'flex', alignItems: 'center',
-              '@media screen and (max-width:900px)': {
-                justifyContent: 'center'
-              },
-            }}>
-              <GroupsIcon sx={{
-                mr: 2, fontSize: 46,
-                color: blue[500],
-                bgcolor: "#fff",
-                borderRadius: 2, p: 1
-              }} />
-              <Box sx={{ width: 240 }}>
-                <Typography variant="h5" gutterBottom>高效</Typography>
-                <Typography variant='h7' color="white.600">
-                  具备高效专业的研发团队<br />
-                  拥有上百款产品研发经验<br />
-                  让每个环节更高效更舒适
-                </Typography>
-              </Box>
-            </Grid>
+            </Grid>)}
           </Grid>
         </Container>
       </Box>
@@ -282,7 +193,7 @@ function HomePage() {
           alignItems: 'center',
           position: 'relative',
         }}>
-          <Typography variant='h4' sx={{ mb: 5, width: '100%' }}>案例展示</Typography>
+          <Typography variant='h4' sx={{ mb: 5, width: '100%' }}>{intl.get('home.case.title')}</Typography>
           <Box sx={{
             width: '100%',
             '.swiper': {
@@ -373,7 +284,7 @@ function HomePage() {
       </Box >
       <Box sx={{ backgroundColor: 'rgba(0,0,0,0.02)', py: 10, alignItems: 'center' }}>
         <Container>
-          <Typography variant='h4' sx={{ mb: 5, width: '100%' }}>联系我们</Typography>
+          <Typography variant='h4' sx={{ mb: 5, width: '100%' }}>{intl.get('home.contact.title')}</Typography>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} sx={{ height: 420, 'img': { width: '100%' } }}>
               <Map
@@ -397,13 +308,13 @@ function HomePage() {
                   mx: 0
                 }
               }}>
-                <Typography variant="h5" gutterBottom>济南漫点信息科技有限公司</Typography>
-                <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>公司地址</Typography>
-                <Typography gutterBottom>山东省济南市花园东路88号</Typography>
-                <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>联系电话</Typography>
-                <Typography gutterBottom>18743238391</Typography>
-                <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>联系邮箱</Typography>
-                <Typography sx={{ mb: 3 }} gutterBottom>chan.mo@outlook.com</Typography>
+                <Typography variant="h5" gutterBottom>{intl.get('home.contact.title')}</Typography>
+                <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.address.title')}</Typography>
+                <Typography gutterBottom>{intl.get('home.contact.address.value')}</Typography>
+                <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.phone.title')}</Typography>
+                <Typography gutterBottom>{intl.get('home.contact.phone.value')}</Typography>
+                <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.email.title')}</Typography>
+                <Typography sx={{ mb: 3 }} gutterBottom>{intl.get('home.contact.email.value')}</Typography>
                 <Box sx={{ flex: 1 }}></Box>
                 <Box sx={{
                   display: 'flex', textAlign: 'center',
@@ -416,15 +327,15 @@ function HomePage() {
                 }}>
                   <Box>
                     <img src="/images/mdian.png" alt=''></img>
-                    <Typography>微信</Typography>
+                    <Typography>{intl.get('home.contact.wx')}</Typography>
                   </Box>
                   <Box>
                     <img src="/images/mdian.png" alt=''></img>
-                    <Typography>公众号</Typography>
+                    <Typography>{intl.get('home.contact.gzh')}</Typography>
                   </Box>
                   <Box>
                     <img src="/images/mdian.png" alt=''></img>
-                    <Typography>小红书</Typography>
+                    <Typography>{intl.get('home.contact.xhs')}</Typography>
                   </Box>
                 </Box>
               </Box>

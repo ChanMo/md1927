@@ -11,6 +11,7 @@ import intl from 'react-intl-universal'
 
 import enUS from './i18n/en.json';
 import zhCN from './i18n/ch.json';
+import { Button, ButtonGroup } from '@mui/material';
 
 const LOCALES_LIST = [
   {
@@ -29,6 +30,7 @@ const LOCALE_DATA = {
 }
 
 const App = () => {
+  const forceUpdate = useForceUpdate();
   const [initDone, setInitDone] = React.useState(false);
 
   React.useEffect(() => {
@@ -53,9 +55,27 @@ const App = () => {
       locales: LOCALE_DATA,
     });
   };
+  const onLocaleChange = (value) => {
+    setCurrentLocale(value);
+    forceUpdate();
+  }
+  const buttons = [
+    <Button key="en"
+      variant={intl.get("local") == 'en-US' ? 'contained' : 'outlined'}
+      onClick={() => onLocaleChange('en-US')}>EN</Button>,
+    <Button key="ch"
+      variant={intl.get("local") == 'zh-CN' ? 'contained' : 'outlined'}
+      onClick={() => onLocaleChange('zh-CN')}>中</Button>,
+  ];
   return <>
     {initDone && <>
-      <Navbar />
+      <Navbar buttons={
+        <ButtonGroup size="small" sx={{
+          'button': { fontSize: '.8rem !important' }
+        }} aria-label="small button group">
+          {buttons}
+        </ButtonGroup>
+      } />
       <RouterProvider router={router} />
       <Footer />
     </>}

@@ -10,7 +10,7 @@ import { useState } from 'react';
 import ReactIntlUniversalExample from '../i18n/transfer';
 
 
-export default function Navbar() {
+export default function Navbar(props) {
   // const [anchorEl, setAnchorEl] = useState(null);
   // const open = Boolean(anchorEl)
   // const handleClick = (event) => {
@@ -84,7 +84,7 @@ export default function Navbar() {
           </div> */}
           {/* <Button href="/case">案例展示</Button> */}
           {/* <Button sx={{ color: "#333" }} href="/about">关于我们</Button> */}
-          <ReactIntlUniversalExample/>
+          {props.buttons}
         </Toolbar>
       </Container>
     </AppBar>
