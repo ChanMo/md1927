@@ -1,62 +1,58 @@
 {
   "local": "en-US",
   "home": {
-    "title": "专注于创新应用开发",
-    "subtitle": "科技创新，引领未来",
+    "title": "Leading the Future with Innovation",
+    "subtitle": "AI, Blockchain, and Metaverse",
     "about": {
-      "title": "关于我们",
+      "title": "ABOUT US",
       "content": [
-        "济南漫点信息科技是一家专注于互联网项目定制开发的公司，成立于 2019 年。公司技术前沿，擅于从 0 开发各类创新型应用。",
-        "公司主营业务涵盖多个行业和领域，包括区块链、人工智能、物联网、Sass 系统、教育、医疗等。公司致力于为客户提供高质量、高性价比的项目开发服务，帮助客户实现业务目标。",
-        "公司拥有一支经验丰富的技术团队，成员具有丰富的项目开发经验，擅长使用各种前沿技术。",
-        "公司拥有完善的项目管理流程，确保项目按时、高质量完成。公司还提供售后支持，帮助客户解决项目使用过程中遇到的问题。"
+        "MDian is a custom software development company founded in 2019. We are a leading technology company with a strong track record of developing innovative applications from scratch.",
+        "Our main business covers a wide range of industries and fields, including blockchain, artificial intelligence, the Internet of Things, SaaS, education, and healthcare. We are committed to providing our clients with high-quality, cost-effective software development services to help them achieve their business goals.",
+        "We have a team of experienced engineers with a proven track record of delivering projects on time and to high standards. We also offer post-sales support to help our clients resolve any issues they may encounter while using our software.",
+        "If you are looking for a leading software development company that can help you achieve your business goals, please contact Mandian Information Technology today."
       ]
     },
     "advantage": {
-      "title": "我们的优势",
+      "title": "WHAT WE DO",
       "content": [
         {
-          "title": "前沿",
+          "title": "AI",
           "values": [
-            "使用更前沿的开发技术框架",
-            "更前沿的设计语言",
-            "更前沿的协作方式"
+            "Custom application based on ChatGpt,",
+            "Pytorch"
           ]
         },
         {
-          "title": "安全",
+          "title": "BlockChain",
           "values": [
-            "严格遵循语言框架安全开发规范",
-            "完整的代码覆盖率测试",
-            "安全渗透测试"
+            "NFT Market",
+            "DApp development",
+            "DFi development"
           ]
         },
         {
-          "title": "创新",
+          "title": "Metaverse",
           "values": [
-            "了解并剖析众多创新应用核心原理",
-            "可以快速复制市场新兴产品"
+            "Virtual sapce"
           ]
         },
         {
-          "title": "高效",
+          "title": "Sass",
           "values": [
-            "具备高效专业的研发团队",
-            "拥有上百款产品研发经验",
-            "让每个环节更高效更舒适"
+            "balala"
           ]
         }
       ]
     },
     "case": {
-      "title": "案例展示",
+      "title": "SHOWCASES",
       "dzkt": {
-        "title": "SaaS-地质勘探平台",
+        "title": "HISOUL",
         "items": [
-          "一款地质数据分析平台",
-          "通过地质数据，展示三维模型，可以实现二维切片展示，全方位查看地质状况",
-          "可以多企业多项目部署，每个项目包含多个地质点位，实现点位状态管理。",
-          "应用于轨道交通、桥梁、水电管道等需要地质分析的场景"
+          "HISOUL",
+          "HISOUL",
+          "HISOUL",
+          "HISOUL"
         ],
         "tags": [
           "Sass",
@@ -65,11 +61,11 @@
         ]
       },
       "gsp": {
-        "title": "Saas-高水平建设平台",
+        "title": "SevenGoldenGates",
         "items": [
-          "特色化项目管理平台",
-          "数据分析",
-          "大屏数据实时展示"
+          "SevenGoldenGates",
+          "SevenGoldenGates",
+          "SevenGoldenGates"
         ],
         "tags": [
           "Sass",
@@ -91,7 +87,7 @@
         ]
       },
       "mpoc": {
-        "title": "区块链-MPOC NFT交易平台",
+        "title": "MPOC NFT Music Market",
         "items": [
           "支持ERC1155, 兼容OpenSea等主流NFT交易平台",
           "支持多种音频以及视频格式, 支持多种解码规格和音乐保护",
@@ -107,7 +103,7 @@
       }
     },
     "contact": {
-      "title": "联系我们",
+      "title": "Contract Us",
       "company": "济南漫点信息科技有限公司",
       "address": {
         "title": "公司地址",

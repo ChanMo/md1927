@@ -44,7 +44,7 @@ export default function LocalProvider({ children }) {
       cookieLocaleKey: 'lang',
     });
     if (!LOCALES_LIST.some(item => item.value === currentLocale)) {
-      currentLocale = "en-US"
+      currentLocale = "zh-CN"
     }
     setCurrentLocale(currentLocale);
     setInitDone(true);
@@ -60,19 +60,20 @@ export default function LocalProvider({ children }) {
     setCurrentLocale(value);
     forceUpdate();
   }
+  const isCN = intl.get("local") == 'zh-CN'
   const buttons = [
     <Button key="en"
-      variant={intl.get("local") == 'en-US' ? 'contained' : 'outlined'}
+      variant={!isCN ? 'contained' : 'outlined'}
       onClick={() => onLocaleChange('en-US')}>EN</Button>,
     <Button key="ch"
-      variant={intl.get("local") == 'zh-CN' ? 'contained' : 'outlined'}
+      variant={isCN ? 'contained' : 'outlined'}
       onClick={() => onLocaleChange('zh-CN')}>中</Button>,
   ];
   const contextValue = {
     intl,
-    buttons
+    buttons,
+    isCN
   }
-  console.log(contextValue);
   return (
     <>
       {initDone && <LocalContext.Provider value={contextValue}>

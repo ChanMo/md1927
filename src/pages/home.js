@@ -14,8 +14,7 @@ import { Map, Marker } from 'react-amap';
 import { useEffect, useState } from 'react';
 import { useLocal } from '../i18n/LocalProvider';
 function HomePage() {
-  const {intl} = useLocal()
-  console.log(intl);
+  const { intl, isCN } = useLocal()
   const [currentIndex, setCurrentIndex] = useState(0)
   const caselist = [
     {
@@ -53,7 +52,7 @@ function HomePage() {
   ]
   return (
     <Layout
-      // banner={intl.get("local")=='zh-US'?'/images/banner.jpg':null}
+      banner={!isCN ? '/images/banner.jpg' : null}
       bannerContent={
         <Container sx={{
           display: 'flex',
@@ -62,10 +61,11 @@ function HomePage() {
           height: '100%',
         }}>
           <Grid container>
-            <Grid item xs={12} md={7} sx={{
+            <Grid item xs={12} md={isCN ? 7 : 12} sx={{
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
+              alignItems: !isCN ? 'center' : 'initial',
               '@media screen and (max-width:900px)': {
                 textAlign: 'center',
                 alignItems: 'center'
@@ -90,10 +90,10 @@ function HomePage() {
                     display: 'block',
                   }
                 }}>
-                <a href='mailto:chan.mo@outlook.com' target='__blank'>联系我们</a>
+                <a href='mailto:chan.mo@outlook.com' target='__blank'>{intl.get('home.contact.title')}</a>
               </Button>
             </Grid>
-            <Grid item xs={12} md={5} sx={{
+            {isCN && <Grid item xs={12} md={5} sx={{
               '@media screen and (max-width:900px)': {
                 display: 'none'
               }, 'img': {
@@ -101,7 +101,7 @@ function HomePage() {
               }
             }}>
               <img src='/images/team_.svg' alt='' />
-            </Grid>
+            </Grid>}
           </Grid>
         </Container>}>
       <Box style={{ background: "#fff" }}>
@@ -231,59 +231,62 @@ function HomePage() {
                 setCurrentIndex(e.realIndex)
               }}
             >
-              {caselist.map((row, key) => <SwiperSlide key={key} style={{ background: '#fff' }}>
-                <Grid container>
-                  <Grid item xs={12} md={7} sx={{ overflow: 'hidden' }}>
-                    {/* <img className='swiper_banner' src={row.image} alt='' /> */}
-                    <Box sx={{
-                      height: 360,
-                      position: 'relative',
-                      overflow: 'hidden',
-                      boxShadow: '1px 10px 5px 10px #333'
-                    }}>
-                      <img style={{
-                        width: '110%',
-                        // height: '100%',
-                        display: 'block'
-                      }} src={row.image} alt='' />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} md={5}>
-                    <Box sx={{
-                      pl: 6, py: 2, pb: 10,
-                      '@media screen and (max-width:900px)': {
-                        px: 0
-                      }
-                    }}>
-                      <Typography variant='h5' gutterBottom>{row.title}</Typography>
-                      {row.introduction.map((r, k) => <Typography key={k} gutterBottom>{r}</Typography>)}
-                      <Box>
-                        {row.tags.map((r, k) => <Typography sx={{
-                          border: '1px solid',
-                          borderColor: grey[500],
-                          p: '.1rem .4rem',
-                          borderRadius: 1,
-                          color: grey[800],
-                          fontSize: '.6rem',
-                          width: 'fit-content',
-                          display: 'inline-block',
-                          mr: 1
-                        }} key={k} gutterBottom>{r}</Typography>)}
+              {caselist.map((row, key) => {
+                if (row.type == 'tk' && !isCN) return null
+                return <SwiperSlide key={key} style={{ background: '#fff' }}>
+                  <Grid container>
+                    <Grid item xs={12} md={7} sx={{ overflow: 'hidden' }}>
+                      {/* <img className='swiper_banner' src={row.image} alt='' /> */}
+                      <Box sx={{
+                        height: 360,
+                        position: 'relative',
+                        overflow: 'hidden',
+                        boxShadow: '1px 10px 5px 10px #333'
+                      }}>
+                        <img style={{
+                          width: '110%',
+                          // height: '100%',
+                          display: 'block'
+                        }} src={row.image} alt='' />
                       </Box>
-                    </Box>
+                    </Grid>
+                    <Grid item xs={12} md={5}>
+                      <Box sx={{
+                        pl: 6, py: 2, pb: 10,
+                        '@media screen and (max-width:900px)': {
+                          px: 0
+                        }
+                      }}>
+                        <Typography variant='h5' gutterBottom>{row.title}</Typography>
+                        {row.introduction.map((r, k) => <Typography key={k} gutterBottom>{r}</Typography>)}
+                        <Box>
+                          {row.tags.map((r, k) => <Typography sx={{
+                            border: '1px solid',
+                            borderColor: grey[500],
+                            p: '.1rem .4rem',
+                            borderRadius: 1,
+                            color: grey[800],
+                            fontSize: '.6rem',
+                            width: 'fit-content',
+                            display: 'inline-block',
+                            mr: 1
+                          }} key={k} gutterBottom>{r}</Typography>)}
+                        </Box>
+                      </Box>
+                    </Grid>
                   </Grid>
-                </Grid>
-              </SwiperSlide>)}
+                </SwiperSlide>
+              })}
               <div className='control'>
                 <SlidePrevButton />
-                <Box>{currentIndex + 1}/{caselist.length}</Box>
+                <Box>{currentIndex + 1}/{isCN ? caselist.length : caselist.length - 1}</Box>
                 <SlideNextButton />
               </div>
             </Swiper>
           </Box>
         </Container>
       </Box >
-      <Box sx={{ backgroundColor: 'rgba(0,0,0,0.02)', py: 10, alignItems: 'center' }}>
+      {isCN ? <Box sx={{ backgroundColor: 'rgba(0,0,0,0.02)', py: 10, alignItems: 'center' }}>
         <Container>
           <Typography variant='h4' sx={{ mb: 5, width: '100%' }}>{intl.get('home.contact.title')}</Typography>
           <Grid container spacing={3}>
@@ -343,7 +346,7 @@ function HomePage() {
             </Grid>
           </Grid>
         </Container>
-      </Box>
+      </Box> : null}
     </Layout>
   );
 }
@@ -363,7 +366,6 @@ function SlideNextButton() {
   return (
     <div onClick={() => {
       swiper.slideNext()
-      console.log(1234);
     }}>
       <KeyboardArrowRightIcon style={{ fontSize: 40 }} />
     </div>

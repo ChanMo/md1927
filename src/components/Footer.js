@@ -6,11 +6,17 @@ import {
   Container
 } from '@mui/material'
 import { blue, grey } from '@mui/material/colors'
+import { useLocal } from '../i18n/LocalProvider';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-export default function Footer({ intl }) {
+export default function Footer() {
+  const { intl, isCN } = useLocal()
   return (
     <Box>
-      <Box sx={{
+      {isCN ? <><Box sx={{
         background: '#444',
         color: "#fff",
         py: 6,
@@ -57,21 +63,43 @@ export default function Footer({ intl }) {
           </Grid>
         </Container>
       </Box>
-      <Box sx={{
-        background: '#333',
-        color: "#fff",
-        display: 'flex',
-        alignItems: 'cente',
-        justifyContent: 'center',
-        py: 2,
-        fontSize: '.8rem',
-        "a": {
-          color: blue[200],
-        }
-      }}>
-        <Typography sx={{ fontSize: '.8rem' }}>济南漫点信息科技有限公司</Typography>
-        <Link href="https://beian.miit.gov.cn/">鲁ICP备19017316-3号</Link>
-      </Box>
+        <Box sx={{
+          background: '#333',
+          color: "#fff",
+          display: 'flex',
+          alignItems: 'cente',
+          justifyContent: 'center',
+          py: 2,
+          fontSize: '.8rem',
+          "a": {
+            color: blue[200],
+          }
+        }}>
+          <Typography sx={{ fontSize: '.8rem' }}>济南漫点信息科技有限公司</Typography>
+          <Link href="https://beian.miit.gov.cn/">鲁ICP备19017316-3号</Link>
+        </Box></> :
+        <Box sx={{
+          background: '#333',
+          color: "#fff",
+          py: 2,
+          fontSize: '.875rem',
+          "a": {
+            color: blue[200],
+          }
+        }}>
+          <Container sx={{
+            display: 'flex',
+            alignItems: 'cente',
+            justifyContent: 'center',
+          }}>
+            <Typography sx={{ fontSize: '.8rem' }}>@MDIAN Leading the Future with Innovation</Typography>
+            <Box sx={{ flex: 1 }} />
+            <GitHubIcon sx={{ mr: 1 }} />
+            <TwitterIcon sx={{ mr: 1 }} />
+            <TelegramIcon sx={{ mr: 1 }} />
+            <LinkedInIcon sx={{ mr: 1 }} />
+          </Container>
+        </Box>}
     </Box>
   )
 }
