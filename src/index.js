@@ -8,9 +8,10 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import useForceUpdate from 'use-force-update';
 import intl from 'react-intl-universal'
+import theme from './utils/theme'
 
 import LocalProvider, { useLocal } from './i18n/LocalProvider';
-import { Button, ButtonGroup } from '@mui/material';
+import { Button, ButtonGroup, ThemeProvider } from '@mui/material';
 
 
 const App = () => {
@@ -33,7 +34,9 @@ const App = () => {
 ReactDOM.render(
   <React.StrictMode>
     <LocalProvider>
-      <App />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
     </LocalProvider>
   </React.StrictMode>,
   document.getElementById('root')

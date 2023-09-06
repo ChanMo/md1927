@@ -1,9 +1,10 @@
 import { createTheme } from '@mui/material/styles'
-import { teal, pink } from '@mui/material/colors'
-
+import { teal, pink, blue } from '@mui/material/colors'
 const theme = createTheme({
   palette: {
-    primary: teal,
+    primary: {
+      main:"#6C63FF"
+    },
     secondary: pink,
   },
 })
