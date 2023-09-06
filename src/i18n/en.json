@@ -49,27 +49,26 @@
       "dzkt": {
         "title": "HISOUL",
         "items": [
-          "HISOUL",
-          "HISOUL",
-          "HISOUL",
-          "HISOUL"
+          "The metaverse will allow you to explore virtual 3D spaces where you can socialize, learn, collaborate and play.",
+          "We believe in the future of connection in the metaverse"
         ],
         "tags": [
-          "Sass",
-          "地质勘探",
-          "三维模型"
+          "Virtual socializing",
+          "Video chat",
+          "Metaverse"
         ]
       },
       "gsp": {
         "title": "SevenGoldenGates",
         "items": [
-          "SevenGoldenGates",
-          "SevenGoldenGates",
-          "SevenGoldenGates"
+          "A geological data analysis platform",
+          "Through geological data, displaying three-dimensional models can realize two-dimensional slice display and comprehensively view geological conditions",
+          "It can be deployed by multiple enterprises and projects, and each project contains multiple geological points to achieve point status management.",
+          "Applied to rail transit, bridges, hydropower pipelines and other scenarios that require geological analysis"
         ],
         "tags": [
           "Sass",
-          "数据分析"
+          "data analysis"
         ]
       },
       "tk": {
@@ -89,16 +88,16 @@
       "mpoc": {
         "title": "MPOC NFT Music Market",
         "items": [
-          "支持ERC1155, 兼容OpenSea等主流NFT交易平台",
-          "支持多种音频以及视频格式, 支持多种解码规格和音乐保护",
-          "现代化的在线播放器, 支持作品收藏, 音乐人收藏等",
-          "多种交易模型以及多币种支付, 安全高效"
+          "Support ERC1155, compatible with mainstream NFT trading platforms such as OpenSea",
+          "Support a variety of audio and video formats, support a variety of decoding specifications and music protection",
+          "Modern online player, support for collections, collections of musicians, etc.",
+          "Multiple transaction models and multi-currency payment, safe and efficient"
         ],
         "tags": [
-          "区块链",
+          "blockchain",
           "NFT",
-          "音频播放",
-          "多币种"
+          "Audio Playback",
+          "Multi-currency"
         ]
       }
     },
