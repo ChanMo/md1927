@@ -31,15 +31,7 @@ function ZhiGaoPage() {
     };
     return <Box sx={{
       '.swiper': {
-        paddingBottom: '24px',
-        '.swiper-pagination-bullet': {
-          // width:30,
-          // height:16,
-          // color:"#fff",
-          // borderRadius:1,
-          // fontSize:10,
-          // lineHeight:'16px'
-        }
+        paddingBottom: '24px'
       },
     }}><Swiper
       spaceBetween={0}

@@ -18,44 +18,66 @@ import { Grid as SwiperGrid, Pagination } from 'swiper/modules';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
 
+const character_list = [{
+  title: '权限控制',
+  content: '用户特性控制访问权限的一种方式是为每个用户参数化数据库凭据。',
+  image: '/images/banner.jpg'
+}, {
+  title: '回收站',
+  content: '打造富有个性功能的回收站可以更加方便我们日常的文档维护工作。',
+  image: '/images/banner.jpg'
+}, {
+  title: '专家账户',
+  content: '权限控制描述,权限控制描述,权限控制描述',
+  image: '/images/banner.jpg'
+}, {
+  title: '打分系统',
+  content: '权限控制描述,权限控制描述,权限控制描述',
+  image: '/images/banner.jpg'
+}, {
+  title: '教师档案',
+  content: '权限控制描述,权限控制描述,权限控制描述',
+  image: '/images/banner.jpg'
+}, {
+  title: '人才培养',
+  content: '权限控制描述,权限控制描述,权限控制描述',
+  image: '/images/banner.jpg'
+}, {
+  title: '资金记录',
+  content: '权限控制描述,权限控制描述,权限控制描述',
+  image: '/images/banner.jpg'
+}]
+
 function ShuanggaoPage() {
-  const character_list = [{
-    title: '权限控制',
-    content: '权限控制描述,权限控制描述,权限控制描述',
-    image: '/images/banner.jpg'
-  }, {
-    title: '回收站',
-    content: '权限控制描述,权限控制描述,权限控制描述',
-    image: '/images/banner.jpg'
-  }, {
-    title: '专家账户',
-    content: '权限控制描述,权限控制描述,权限控制描述',
-    image: '/images/banner.jpg'
-  }, {
-    title: '打分系统',
-    content: '权限控制描述,权限控制描述,权限控制描述',
-    image: '/images/banner.jpg'
-  }, {
-    title: '教师档案',
-    content: '权限控制描述,权限控制描述,权限控制描述',
-    image: '/images/banner.jpg'
-  }, {
-    title: '人才培养',
-    content: '权限控制描述,权限控制描述,权限控制描述',
-    image: '/images/banner.jpg'
-  }, {
-    title: '资金记录',
-    content: '权限控制描述,权限控制描述,权限控制描述',
-    image: '/images/banner.jpg'
-  }, {
-    title: '权限控制',
-    content: '权限控制描述,权限控制描述,权限控制描述',
-    image: '/images/banner.jpg'
-  }, {
-    title: '++++',
-    content: '权限控制描述,权限控制描述,权限控制描述',
-    image: '/images/banner.jpg'
-  }]
+  const banners = [1, 2, 3, 4, 5]
+
+  const renderBanners = () => {
+    const pagination = {
+      clickable: true,
+      renderBullet: function (index, className) {
+        console.log(className);
+        return `<span class="${className}"></span>`;
+      },
+    };
+    return <Box sx={{
+      '.swiper': {
+        paddingBottom: '24px'
+      },
+    }}><Swiper
+      spaceBetween={0}
+      loop
+      autoplay
+      pagination={pagination}
+      modules={[Pagination]}
+    >
+        {banners.map((row) => {
+          return <SwiperSlide key={row}>
+            <img src={`/images/shuanggao/zz_b${row}.jpg`} alt={`zz${row}`} />
+          </SwiperSlide>
+        })}
+      </Swiper>
+    </Box>
+  }
   const client_list = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
   return (
     <Layout
@@ -94,21 +116,14 @@ function ShuanggaoPage() {
                     px: 1.5,
                     textDecoration: 'none',
                     display: 'block',
-                  },
-                  ':nth-child(1)': {
-                    border: '1px solid #6C63FF',
-                    bgcolor: "#6C63FF",
-                    'a': {
-                      color: "#fff",
-                    }
                   }
                 }
               }}>
-                <Button variant="contained">
-                  <a>申请试用</a>
-                </Button>
                 <Button variant="outlined">
                   <a href='mailto:chan.mo@outlook.com' target='__blank'>联系我们</a>
+                </Button>
+                <Button variant="contained">
+                  <a style={{ color: "#fff" }}>申请试用</a>
                 </Button>
               </Box>
             </Grid>
@@ -119,7 +134,7 @@ function ShuanggaoPage() {
                 width: '100%'
               }
             }}>
-              <img src='/images/banner.jpg' alt='' />
+              {renderBanners()}
             </Grid>
           </Grid>
         </Container>}>
@@ -155,17 +170,14 @@ function ShuanggaoPage() {
             <Grid container rowSpacing={0} columnSpacing={20}>
               <Grid item xs={12} md={6}>
                 <div className='about_img'>
-                  <img src="/images/banner.jpg" alt=''></img>
+                  <img src="/images/shuanggao/zz_b4.jpg" alt=''></img>
                 </div>
               </Grid>
               <Grid item xs={12} md={6}>
                 <Typography variant='h4'
                   sx={{
-                    my: 4,
-                    '@media screen and (max-width:900px)': {
-                      my: 2,
-                    },
-                  }}>灵活的目录结构和活动(任务)结构</Typography>
+                    mt: 4
+                  }} gutterBottom>灵活的目录结构和活动(任务)结构</Typography>
                 <Typography gutterBottom>
                   ********
                 </Typography>
@@ -197,17 +209,14 @@ function ShuanggaoPage() {
                 }
               }}>
                 <div className='about_img'>
-                  <img src="/images/banner.jpg" alt=''></img>
+                  <img src="/images/shuanggao/zz_b6.jpg" alt=''></img>
                 </div>
               </Grid>
               <Grid item xs={12} md={6}>
                 <Typography variant='h4'
                   sx={{
-                    my: 4,
-                    '@media screen and (max-width:900px)': {
-                      my: 2,
-                    },
-                  }}>丰富的活动(任务)内容模板</Typography>
+                    mt: 2,
+                  }} gutterBottom>丰富的活动(任务)内容模板</Typography>
                 <Typography gutterBottom>
                   测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
                 </Typography>
@@ -218,7 +227,7 @@ function ShuanggaoPage() {
                 }
               }}>
                 <div className='about_img'>
-                  <img src="/images/banner.jpg" alt=''></img>
+                  <img src="/images/shuanggao/zz_b6.jpg" alt=''></img>
                 </div>
               </Grid>
             </Grid>
@@ -244,7 +253,7 @@ function ShuanggaoPage() {
             <Grid container rowSpacing={0} columnSpacing={20}>
               <Grid item xs={12} md={6}>
                 <div className='about_img'>
-                  <img src="/images/banner.jpg" alt=''></img>
+                  <img src="/images/shuanggao/zz_b7.jpg" alt=''></img>
                 </div>
               </Grid>
               <Grid item xs={12} md={6} sx={{
@@ -255,11 +264,8 @@ function ShuanggaoPage() {
               }}>
                 <Typography variant='h4'
                   sx={{
-                    my: 4,
-                    '@media screen and (max-width:900px)': {
-                      my: 2,
-                    },
-                  }}>完善的文档操作</Typography>
+                    mt: 2,
+                  }} gutterBottom>完善的文档操作</Typography>
                 <Typography gutterBottom>
                   完善的文档操作<br />
                   完善的文档操作
@@ -278,11 +284,9 @@ function ShuanggaoPage() {
         }}>
           <Typography variant='h4'
             sx={{
-              mb: 4,
-              '@media screen and (max-width:900px)': {
-                mb: 2
-              }
-            }}>更多特性</Typography>
+              mt: 2,
+              mb: 3
+            }} gutterBottom>更多特性</Typography>
           <Box sx={{
             display: 'flex',
             flexDirection: 'row',
@@ -321,7 +325,7 @@ function ShuanggaoPage() {
                   opacity: 0,
                   background: 'rgba(0,0,0,0.6)',
                   color: '#fff',
-                }}><Typography sx={{ p: 1 }}>{item.content}</Typography></Box>
+                }}><Typography sx={{ p: 1 ,fontSize:'.875rem'}}>{item.content}</Typography></Box>
               </Box>
             </Box>)}
           </Box>
@@ -333,14 +337,14 @@ function ShuanggaoPage() {
           '@media screen and (max-width:900px)': {
             pb: 0
           }
-        }}>
+        }} maxWidth='md' >
           <Typography variant='h4'
             sx={{
-              mb: 4, textAlign: 'center',
+              mb: 3, textAlign: 'center',
               '@media screen and (max-width:900px)': {
                 mb: 2
               }
-            }}>我们的客户</Typography>
+            }} gutterBottom>我们的客户</Typography>
           <Box sx={{
             display: 'flex',
             flexDirection: 'row',
@@ -369,7 +373,7 @@ function ShuanggaoPage() {
       <Box style={{ background: "#fff" }}>
         <Container sx={{ py: 5 }}>
           <Typography variant='h4'
-            sx={{ mb: 4, textAlign: 'center' }}>联系我们</Typography>
+            sx={{ textAlign: 'center', mb: 3 }} gutterBottom>联系我们</Typography>
           <Box sx={{
             display: 'flex',
             flexDirection: 'row',
