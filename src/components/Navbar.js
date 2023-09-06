@@ -5,17 +5,21 @@ import {
   Typography,
   Button,
   ButtonGroup,
+  Menu,
+  MenuItem,
+  Box,
+  Link,
 } from '@mui/material'
 import { useState } from 'react';
 
 
 export default function Navbar(props) {
-  // const [anchorEl, setAnchorEl] = useState(null);
-  // const open = Boolean(anchorEl)
-  // const handleClick = (event) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
-  // const handleClose = () => { setAnchorEl(null) }
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl)
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => { setAnchorEl(null) }
   return (
     <AppBar position="fixed" color="transparent" sx={{
       boxShadow: 'none',
@@ -41,8 +45,9 @@ export default function Navbar(props) {
             <img src='/images/logo_md1927.svg' alt='' />
             <span>济南漫点信息科技</span>
           </Typography>
-          <div style={{ flex: 1 }}></div>
-          {/* <div>
+          <Box sx={{
+            ml: 2
+          }}>
             <Button
               id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}
@@ -50,6 +55,7 @@ export default function Navbar(props) {
               aria-expanded={open ? 'true' : undefined}
               onClick={handleClick}
               onMouseOver={handleClick}
+              sx={{ color: "#333" }}
             >
               案例展示
             </Button>
@@ -58,30 +64,27 @@ export default function Navbar(props) {
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
+              sx={{
+                'a': {
+                  display: 'block',
+                  width: '100%',
+                  color: "#333 !important"
+                }
+              }}
             >
               <Box
-                sx={{
-                  'a': {
-                    display: 'block',
-                    width: '100%',
-                    color: "#333"
-                  }
-                }}
                 onMouseLeave={handleClose}
               >
                 <MenuItem onClick={handleClose}>
-                  <Link underline="none" href="/case">微信小程序</Link>
+                  <Link underline="none" href="/zhigao">职教高考题库SASS平台</Link>
                 </MenuItem>
                 <MenuItem href="/case" onClick={handleClose}>
-                  <Link underline="none" href="/case">Android/IOS移动端</Link>
-                </MenuItem>
-                <MenuItem href="/case" onClick={handleClose}>
-                  <Link underline="none" href="/case">网站设计</Link>
+                  <Link underline="none" href="/shuanggao">中职院校双高建设SASS平台</Link>
                 </MenuItem>
               </Box>
             </Menu>
-          </div> */}
-          {/* <Button href="/case">案例展示</Button> */}
+          </Box>
+          <div style={{ flex: 1 }}></div>
           {/* <Button sx={{ color: "#333" }} href="/about">关于我们</Button> */}
           {props.buttons}
         </Toolbar>

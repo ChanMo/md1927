@@ -19,7 +19,43 @@ import 'swiper/css/grid';
 import 'swiper/css/pagination';
 
 function ZhiGaoPage() {
+  const banners = [1, 2, 3, 4, 5]
 
+  const renderBanners = () => {
+    const pagination = {
+      clickable: true,
+      renderBullet: function (index, className) {
+        console.log(className);
+        return `<span class="${className}"></span>`;
+      },
+    };
+    return <Box sx={{
+      '.swiper':{
+        paddingBottom:'24px',
+        '.swiper-pagination-bullet':{
+          // width:30,
+          // height:16,
+          // color:"#fff",
+          // borderRadius:1,
+          // fontSize:10,
+          // lineHeight:'16px'
+        }
+      },
+    }}><Swiper
+      spaceBetween={0}
+      loop
+      autoplay
+      pagination={pagination}
+      modules={[Pagination]}
+    >
+        {banners.map((row) => {
+          return <SwiperSlide key={row}>
+            <img src={`/images/zhigao/zg_b${row}.jpg`} alt={`zg${row}`} />
+          </SwiperSlide>
+        })}
+      </Swiper>
+    </Box>
+  }
   const client_list = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
   return (
     <Layout
@@ -47,21 +83,30 @@ function ZhiGaoPage() {
               <Typography variant="h5" paddingBottom={4} gutterBottom>
                 中职院校高考题库, 课程和在线考试系统
               </Typography>
-              <Button variant="outlined"
-                sx={{
+              <Box sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                'button': {
                   borderColor: "#6C63FF",
                   width: 'fit-content',
                   p: 0,
+                  mr: 2,
                   'a': {
                     color: "#6C63FF",
                     py: 0.6,
                     px: 1.5,
                     textDecoration: 'none',
-                    display: 'block',
+                    display: 'block'
                   }
-                }}>
-                <a href='mailto:chan.mo@outlook.com' target='__blank'>联系我们</a>
-              </Button>
+                }
+              }}>
+                <Button variant="outlined">
+                  <a href='mailto:chan.mo@outlook.com' target='__blank'>联系我们</a>
+                </Button>
+                <Button variant="contained">
+                  <a style={{ color: "#fff" }} target='__blank'>申请试用</a>
+                </Button>
+              </Box>
             </Grid>
             <Grid item xs={12} md={5} sx={{
               '@media screen and (max-width:900px)': {
@@ -70,7 +115,7 @@ function ZhiGaoPage() {
                 width: '100%'
               }
             }}>
-              <img src='/images/banner.jpg' alt='' />
+              {renderBanners()}
             </Grid>
           </Grid>
         </Container>}>
@@ -241,7 +286,7 @@ function ZhiGaoPage() {
             display: 'flex',
             flexDirection: 'row',
             flexWrap: 'wrap',
-            '@media screen and (max-width:900px)':{
+            '@media screen and (max-width:900px)': {
               justifyContent: 'center'
             }
           }}>
