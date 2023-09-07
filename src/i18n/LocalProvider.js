@@ -43,8 +43,8 @@ export default function LocalProvider({ children }) {
       urlLocaleKey: 'lang',
       cookieLocaleKey: 'lang',
     });
-    console.log(window);
-    console.log(currentLocale);
+    const localStorge = localStorage.getItem('currentLocale')
+    if (localStorge) currentLocale = localStorge
     if (!LOCALES_LIST.some(item => item.value === currentLocale)) {
       currentLocale = "zh-CN"
     }
@@ -57,6 +57,7 @@ export default function LocalProvider({ children }) {
       currentLocale,
       locales: LOCALE_DATA,
     });
+    localStorage.setItem('currentLocale',currentLocale)
   };
   const onLocaleChange = (value) => {
     setCurrentLocale(value);
