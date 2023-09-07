@@ -43,6 +43,8 @@ export default function LocalProvider({ children }) {
       urlLocaleKey: 'lang',
       cookieLocaleKey: 'lang',
     });
+    console.log(window);
+    console.log(currentLocale);
     if (!LOCALES_LIST.some(item => item.value === currentLocale)) {
       currentLocale = "zh-CN"
     }

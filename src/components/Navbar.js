@@ -9,9 +9,23 @@ import {
   MenuItem,
   Box,
   Link,
+  IconButton,
+  Dialog,
+  Slide,
+  DialogTitle,
+  ListItemButton,
+  ListItemText,
+  Divider,
 } from '@mui/material'
-import { useState } from 'react';
-
+import { forwardRef, useState } from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+const Transition = forwardRef(function Transition(
+  props: any,
+  ref: any
+) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
 
 export default function Navbar(props) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -20,6 +34,56 @@ export default function Navbar(props) {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => { setAnchorEl(null) }
+
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const renderPhoneMenu = () => {
+    return <Box sx={{
+      '@media screen and (min-width:900px)': {
+        display: 'none'
+      }
+    }}>
+      <IconButton onClick={() => setMenuOpen(true)}>
+        <MenuIcon />
+      </IconButton>
+      <Dialog
+        open={menuOpen}
+        fullScreen
+        onClose={() => setMenuOpen(false)}
+        sx={{
+          'a': {
+            display: 'block'
+          }
+        }}
+      >
+        <Container>
+          <Toolbar sx={{
+            display: 'flex'
+          }}>
+            <Box sx={{ flex: 1 }}></Box>
+            <IconButton
+              onClick={() => setMenuOpen(false)}>
+              <CloseIcon />
+            </IconButton>
+          </Toolbar>
+        </Container>
+        <Box>
+          <ListItemButton component="a" href="/zhigao">
+            <ListItemText primary="职教高考题库SASS平台" />
+          </ListItemButton>
+          <Divider />
+          <ListItemButton component="a" href="/shuanggao">
+            <ListItemText primary="中职院校双高建设SASS平台" />
+          </ListItemButton>
+          <Divider />
+          <Box sx={{ p: 2 }}>
+            <Box onClick={() => setMenuOpen(false)} sx={{ width: 'fit-content' }}>{props.buttons}</Box>
+          </Box>
+        </Box>
+      </Dialog>
+    </Box >
+  }
   return (
     <AppBar position="fixed" color="transparent" sx={{
       boxShadow: 'none',
@@ -46,7 +110,10 @@ export default function Navbar(props) {
             <span>济南漫点信息科技</span>
           </Typography>
           <Box sx={{
-            ml: 2
+            ml: 2,
+            '@media screen and (max-width:900px)': {
+              display: 'none'
+            }
           }}>
             <Button
               id="basic-button"
@@ -86,7 +153,14 @@ export default function Navbar(props) {
           </Box>
           <div style={{ flex: 1 }}></div>
           {/* <Button sx={{ color: "#333" }} href="/about">关于我们</Button> */}
-          {props.buttons}
+          <Box sx={{
+            '@media screen and (max-width:900px)': {
+              display: 'none'
+            }
+          }}>
+            {props.buttons}
+          </Box>
+          {renderPhoneMenu()}
         </Toolbar>
       </Container>
     </AppBar>
