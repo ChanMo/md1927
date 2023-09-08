@@ -314,12 +314,12 @@ function HomePage() {
                 }
               }}>
                 <Typography variant="h5" gutterBottom>{intl.get('home.contact.title')}</Typography>
-                <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.address.title')}</Typography>
+                <Typography sx={{ mt: 1 }} color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.address.title')}</Typography>
                 <Typography gutterBottom>{intl.get('home.contact.address.value')}</Typography>
-                <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.phone.title')}</Typography>
+                <Typography color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.phone.title')}</Typography>
                 <Typography gutterBottom>{intl.get('home.contact.phone.value')}</Typography>
-                <Typography sx={{ mt: 2 }} color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.email.title')}</Typography>
-                <Typography sx={{ mb: 3 }} gutterBottom>{intl.get('home.contact.email.value')}</Typography>
+                <Typography color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.email.title')}</Typography>
+                <Typography sx={{ mb: 1 }} gutterBottom>{intl.get('home.contact.email.value')}</Typography>
                 <Box sx={{ flex: 1 }}></Box>
                 <Box sx={{
                   display: 'flex', textAlign: 'center',
@@ -327,21 +327,21 @@ function HomePage() {
                     mr: 2,
                   },
                   'img': {
-                    width: '60px'
+                    width: '100px'
                   }
                 }}>
                   <Box>
                     <img src="/images/mdian.png" alt=''></img>
                     <Typography>{intl.get('home.contact.wx')}</Typography>
                   </Box>
-                  <Box>
+                  {/* <Box>
                     <img src="/images/mdian.png" alt=''></img>
                     <Typography>{intl.get('home.contact.gzh')}</Typography>
                   </Box>
                   <Box>
                     <img src="/images/mdian.png" alt=''></img>
                     <Typography>{intl.get('home.contact.xhs')}</Typography>
-                  </Box>
+                  </Box> */}
                 </Box>
               </Box>
             </Grid>

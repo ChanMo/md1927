@@ -97,7 +97,7 @@ export default function Footer() {
             <GitHubIcon sx={{ mr: 1 }} />
             <TwitterIcon sx={{ mr: 1 }} />
             <TelegramIcon sx={{ mr: 1 }} />
-            <LinkedInIcon sx={{ mr: 1 }} />
+            {/* <LinkedInIcon sx={{ mr: 1 }} /> */}
           </Container>
         </Box>}
     </Box>
