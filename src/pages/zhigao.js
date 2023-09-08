@@ -53,7 +53,7 @@ function ZhiGaoPage() {
     <Layout
       // banner={'/images/banner.jpg'}
       bannerContent={
-        <Container sx={{
+        <Container maxWidth='xl' sx={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -112,7 +112,7 @@ function ZhiGaoPage() {
           </Grid>
         </Container>}>
       <Box style={{ background: "#fff" }}>
-        <Container sx={{
+        <Container maxWidth='xl' sx={{
           py: 5,
           '.about_img': {
             width: '100%',
@@ -165,7 +165,7 @@ function ZhiGaoPage() {
         </Container>
       </Box >
       <Box style={{ background: "#fff" }}>
-        <Container sx={{
+        <Container maxWidth='xl' sx={{
           py: 5,
           '.about_img': {
             width: '100%',
@@ -205,7 +205,7 @@ function ZhiGaoPage() {
         </Container>
       </Box >
       <Box style={{ background: "#fff" }}>
-        <Container sx={{
+        <Container maxWidth='xl' sx={{
           py: 5,
           '.about_img': {
             width: '100%',
@@ -259,7 +259,7 @@ function ZhiGaoPage() {
         </Container>
       </Box>
       <Box style={{ background: "#fff" }}>
-        <Container sx={{
+        <Container maxWidth='xl' sx={{
           py: 5,
           '@media screen and (max-width:900px)': {
             pb: 0
@@ -298,7 +298,7 @@ function ZhiGaoPage() {
         </Container>
       </Box >
       <Box style={{ background: "#fff" }}>
-        <Container sx={{ py: 5 }}>
+        <Container maxWidth='xl' sx={{ py: 5 }}>
           <Typography variant='h4'
             sx={{ mb: 4, textAlign: 'center' }}>联系我们</Typography>
           <Box sx={{

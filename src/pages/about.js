@@ -28,7 +28,7 @@ function AboutPage() {
 
         </Box>
       </Container>
-      {/* <Container>
+      {/* <Container maxWidth='xl'>
         <Grid container spacing={3}>
           <Grid item sm={12} md={5} sx={{ 'img': { width: '100%' } }}>
             <Box sx={{ height: 320 }}>

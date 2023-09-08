@@ -50,7 +50,7 @@ function CasePage() {
   return <Layout>
 
     <Box sx={{ background: "#fff" }}>
-      <Container sx={{ py: 5 }}>
+      <Container maxWidth='xl' sx={{ py: 5 }}>
         {list.map((item, index) => {
           return <Card key={index}
             sx={{ mb: 3, boxShadow: '1px 5px 10px 0 #f3f3f3' }}>

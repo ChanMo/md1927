@@ -52,24 +52,25 @@ function HomePage() {
   ]
   return (
     <Layout
-      banner={!isCN ? '/images/banner.jpg' : null}
+      banner={!isCN ? '/images/banner.jpg' : '/images/banner.jpg'}
       bannerContent={
-        <Container sx={{
+        <Container maxWidth='xl' sx={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           height: '100%',
         }}>
           <Grid container>
-            <Grid item xs={12} md={isCN ? 7 : 12} sx={{
+            <Grid item xs={12} md={12} sx={{
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              alignItems: !isCN ? 'center' : 'initial',
-              '@media screen and (max-width:900px)': {
-                textAlign: 'center',
-                alignItems: 'center'
-              }
+              alignItems: 'center'
+              // alignItems: !isCN ? 'center' : 'initial',
+              // '@media screen and (max-width:900px)': {
+              //   textAlign: 'center',
+              //   alignItems: 'center'
+              // }
             }}>
               <Typography variant="h3" gutterBottom>
                 {intl.get('home.title')}
@@ -93,7 +94,7 @@ function HomePage() {
                 <a href='mailto:chan.mo@outlook.com' target='__blank'>{intl.get('home.contact.title')}</a>
               </Button>
             </Grid>
-            {isCN && <Grid item xs={12} md={5} sx={{
+            {/* {isCN && <Grid item xs={12} md={5} sx={{
               '@media screen and (max-width:900px)': {
                 display: 'none'
               }, 'img': {
@@ -101,11 +102,11 @@ function HomePage() {
               }
             }}>
               <img src='/images/team_.svg' alt='' />
-            </Grid>}
+            </Grid>} */}
           </Grid>
         </Container>}>
       <Box style={{ background: "#fff" }}>
-        <Container sx={{
+        <Container maxWidth='xl' sx={{
           py: 10,
           '.about_img': {
             width: '100%',
@@ -153,7 +154,7 @@ function HomePage() {
         </Container>
       </Box> */}
       <Box sx={{ background: "#fff" }}>
-        <Container sx={{ py: 10 }}>
+        <Container maxWidth='xl' sx={{ py: 10 }}>
           <Typography variant='h4' sx={{ mb: 5 }}>{intl.get('home.advantage.title')}</Typography>
           <Grid container spacing={3} sx={{
             'svg': {
@@ -186,7 +187,7 @@ function HomePage() {
         </Container>
       </Box>
       <Box style={{ background: "#fff" }}>
-        <Container sx={{
+        <Container maxWidth='xl' sx={{
           py: 10,
           display: 'flex',
           flexDirection: 'column',

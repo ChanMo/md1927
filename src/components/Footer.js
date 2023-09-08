@@ -21,7 +21,7 @@ export default function Footer() {
         color: "#fff",
         py: 6,
       }}>
-        <Container sx={{
+        <Container maxWidth="xl" sx={{
           '@media screen and (max-width:900px)': {
             '.MuiGrid-grid-xs-12': {
               mb: 2,
@@ -87,7 +87,7 @@ export default function Footer() {
             color: blue[200],
           }
         }}>
-          <Container sx={{
+          <Container maxWidth='xl' sx={{
             display: 'flex',
             alignItems: 'cente',
             justifyContent: 'center',

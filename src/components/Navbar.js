@@ -57,7 +57,7 @@ export default function Navbar(props) {
           }
         }}
       >
-        <Container>
+        <Container maxWidth='xl'>
           <Toolbar sx={{
             display: 'flex'
           }}>
@@ -89,7 +89,7 @@ export default function Navbar(props) {
       boxShadow: 'none',
       background: 'rgba(255,255,255,0.9)'
     }}>
-      <Container>
+      <Container maxWidth='xl'>
         <Toolbar>
           <Typography
             variant="h6"
