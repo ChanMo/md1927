@@ -1,5 +1,9 @@
 {
   "local": "zh-CN",
+  "navbar":{
+    "company":"济南漫点信息科技",
+    "case":"案例展示"
+  },
   "home": {
     "title": "专注于创新应用开发",
     "subtitle": "科技创新，引领未来",

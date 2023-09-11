@@ -1,5 +1,9 @@
 {
   "local": "en-US",
+  "navbar":{
+    "company":"MDIAN",
+    "case":"Case show"
+  },
   "home": {
     "title": "Leading the Future with Innovation",
     "subtitle": "AI, Blockchain, and Metaverse",
@@ -103,7 +107,7 @@
     },
     "contact": {
       "title": "Contract Us",
-      "company": "济南漫点信息科技有限公司",
+      "company": "济南漫点信息科技",
       "address": {
         "title": "公司地址",
         "value": "山东省济南市历下区鲁商盛景广场A1606"

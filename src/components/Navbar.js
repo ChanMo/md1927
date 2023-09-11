@@ -20,6 +20,7 @@ import {
 import { forwardRef, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { useLocal } from '../i18n/LocalProvider';
 const Transition = forwardRef(function Transition(
   props: any,
   ref: any
@@ -28,6 +29,7 @@ const Transition = forwardRef(function Transition(
 });
 
 export default function Navbar(props) {
+  const { intl, isCN } = useLocal()
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
@@ -107,7 +109,7 @@ export default function Navbar(props) {
               }
             }}>
             <img src='/images/logo_md1927.svg' alt='' />
-            <span>济南漫点信息科技</span>
+            <span>{intl.get('navbar.company')}</span>
           </Typography>
           <Box sx={{
             ml: 2,
@@ -124,7 +126,7 @@ export default function Navbar(props) {
               onMouseOver={handleClick}
               sx={{ color: "#333" }}
             >
-              案例展示
+              {intl.get('navbar.case')}
             </Button>
             <Menu
               id="basic-menu"
