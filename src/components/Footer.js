@@ -94,12 +94,17 @@ export default function Footer() {
           }}>
             <Typography sx={{ fontSize: '.8rem' }}>@MDIAN Leading the Future with Innovation</Typography>
             <Box sx={{ flex: 1 }} />
-            <GitHubIcon sx={{ mr: 1 }} />
-            <TwitterIcon sx={{ mr: 1 }} />
-            <TelegramIcon sx={{ mr: 1 }} />
+
+            <Link sx={{ mr: 1, 'svg': { color: '#fff' } }} href='https://github.com/ChanMo' target='_blank'>
+              <GitHubIcon />
+            </Link>
+            {/* <TwitterIcon sx={{ mr: 1, cursor: 'pointer' }} /> */}
+            <Link sx={{ mr: 1, 'svg': { color: '#fff' } }} href='https://t.me/+Cq8BCmFVDp03YTM1' target='_blank'>
+              <TelegramIcon />
+            </Link>
             {/* <LinkedInIcon sx={{ mr: 1 }} /> */}
           </Container>
         </Box>}
-    </Box>
+    </Box >
   )
 }

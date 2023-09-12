@@ -117,7 +117,7 @@ export default function Navbar(props) {
               display: 'none'
             }
           }}>
-            <Button
+            {isCN?<Button
               id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}
               aria-haspopup="true"
@@ -127,7 +127,7 @@ export default function Navbar(props) {
               sx={{ color: "#333" }}
             >
               {intl.get('navbar.case')}
-            </Button>
+            </Button>:null}
             <Menu
               id="basic-menu"
               anchorEl={anchorEl}

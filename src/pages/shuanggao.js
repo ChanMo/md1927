@@ -102,9 +102,7 @@ function ShuanggaoPage() {
               <Typography variant="h3" gutterBottom>
                 中职院校双高建设SASS平台
               </Typography>
-              <Typography variant="h5" paddingBottom={4} gutterBottom>
-                "高水平学校"和"特色化专业"建设平台
-              </Typography>
+              <Typography variant="h5" paddingBottom={4} gutterBottom>产品在任务管理和文档管理方面提供了高度的灵活性、多样性和效率，满足了不同组织的需求。</Typography>
               <Box sx={{
                 'button': {
                   borderColor: "#6C63FF",
@@ -120,11 +118,11 @@ function ShuanggaoPage() {
                 }
               }}>
                 <Button variant="outlined">
-                  <a href='mailto:chan.mo@outlook.com' target='__blank'>联系我们</a>
+                  <a href='mailto:chan.mo@outlook.com' target='__blank'>申请试用</a>
                 </Button>
-                <Button variant="contained">
+                {/* <Button variant="contained">
                   <a style={{ color: "#fff" }}>申请试用</a>
-                </Button>
+                </Button> */}
               </Box>
             </Grid>
             <Grid item xs={12} md={5} sx={{
@@ -138,7 +136,7 @@ function ShuanggaoPage() {
             </Grid>
           </Grid>
         </Container>}>
-      <Box style={{ background: "#fff" }}>
+      {/* <Box style={{ background: "#fff" }}>
         <Container maxWidth='xl' sx={{ py: 5 }}>
           <Typography variant='h4'
             sx={{ mb: 4, textAlign: 'center' }}>专为"泛资质建设"设计的文档和流程管理系统</Typography>
@@ -147,10 +145,10 @@ function ShuanggaoPage() {
             flexDirection: 'row',
             flexWrap: 'wrap'
           }}>
-            <Typography>dawdawdawda=</Typography>
+            <Typography></Typography>
           </Box>
         </Container>
-      </Box>
+      </Box> */}
 
       <Box style={{ background: "#fff" }}>
         <Container maxWidth='xl' sx={{
@@ -179,7 +177,7 @@ function ShuanggaoPage() {
                     mt: 4
                   }} gutterBottom>灵活的目录结构和活动(任务)结构</Typography>
                 <Typography gutterBottom>
-                  ********
+                  灵活的目录结构 (Flexible Directory Structure): 您的系统允许用户根据自己的需求轻松设置目录结构，使其能够组织和管理任务和文档。这种灵活性使不同类型的组织能够根据其特定的工作流程和项目需求来定制目录结构，从而提高工作效率。
                 </Typography>
               </Grid>
             </Grid>
@@ -218,7 +216,7 @@ function ShuanggaoPage() {
                     mt: 2,
                   }} gutterBottom>丰富的活动(任务)内容模板</Typography>
                 <Typography gutterBottom>
-                  测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
+                  丰富的内容模板 (Rich Content Templates): 每个任务都具备丰富的内容模板，适用于不同的场景和需求。这种多样性使用户能够更轻松地创建任务，并根据其性质和目标选择适当的模板。这不仅提高了工作效率，还确保了任务的一致性和质量。
                 </Typography>
               </Grid>
               <Grid item xs={12} md={6} sx={{
@@ -267,15 +265,14 @@ function ShuanggaoPage() {
                     mt: 2,
                   }} gutterBottom>完善的文档操作</Typography>
                 <Typography gutterBottom>
-                  完善的文档操作<br />
-                  完善的文档操作
+                  完善的文档管理系统 (Comprehensive Document Management): 您的系统提供了完整的文档管理功能，为学校和其他组织提供了方便的内部文档管理工具。用户可以轻松地上传、存储、查找和分享文档，从而促进了信息共享和协作。这有助于提高学校和其他组织的工作效率，并确保文档的安全和可访问性。
                 </Typography>
               </Grid>
             </Grid>
           </Box>
         </Container>
       </Box>
-      <Box style={{ background: "#fff" }}>
+      {/* <Box style={{ background: "#fff" }}>
         <Container maxWidth='xl' sx={{
           py: 5,
           '@media screen and (max-width:900px)': {
@@ -325,13 +322,13 @@ function ShuanggaoPage() {
                   opacity: 0,
                   background: 'rgba(0,0,0,0.6)',
                   color: '#fff',
-                }}><Typography sx={{ p: 1 ,fontSize:'.875rem'}}>{item.content}</Typography></Box>
+                }}><Typography sx={{ p: 1, fontSize: '.875rem' }}>{item.content}</Typography></Box>
               </Box>
             </Box>)}
           </Box>
         </Container>
-      </Box >
-      <Box style={{ background: "#fff" }}>
+      </Box > */}
+      {/* <Box style={{ background: "#fff" }}>
         <Container maxWidth='xl' sx={{
           py: 5,
           '@media screen and (max-width:900px)': {
@@ -382,7 +379,7 @@ function ShuanggaoPage() {
             <Typography>dawdawdawda=</Typography>
           </Box>
         </Container>
-      </Box >
+      </Box > */}
     </Layout >
   );
 }

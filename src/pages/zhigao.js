@@ -93,11 +93,11 @@ function ZhiGaoPage() {
                 }
               }}>
                 <Button variant="outlined">
-                  <a href='mailto:chan.mo@outlook.com' target='__blank'>联系我们</a>
+                  <a href='mailto:chan.mo@outlook.com' target='__blank'>申请试用</a>
                 </Button>
-                <Button variant="contained">
+                {/* <Button variant="contained">
                   <a style={{ color: "#fff" }} target='__blank'>申请试用</a>
-                </Button>
+                </Button> */}
               </Box>
             </Grid>
             <Grid item xs={12} md={5} sx={{
@@ -258,7 +258,7 @@ function ZhiGaoPage() {
           </Box>
         </Container>
       </Box>
-      <Box style={{ background: "#fff" }}>
+      {/* <Box style={{ background: "#fff" }}>
         <Container maxWidth='xl' sx={{
           py: 5,
           '@media screen and (max-width:900px)': {
@@ -309,7 +309,7 @@ function ZhiGaoPage() {
             <Typography>dawdawdawda=</Typography>
           </Box>
         </Container>
-      </Box >
+      </Box > */}
     </Layout >
   );
 }

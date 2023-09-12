@@ -11,12 +11,12 @@ import Layout from '../components/Layout';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/css';
 import { Map, Marker } from 'react-amap';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useLocal } from '../i18n/LocalProvider';
 function HomePage() {
   const { intl, isCN } = useLocal()
   const [currentIndex, setCurrentIndex] = useState(0)
-  const caselist = [
+  const caselist = isCN ? [
     {
       title: intl.get("home.case.dzkt.title"),
       type: 'dzkt',
@@ -40,6 +40,31 @@ function HomePage() {
       image: '/cases/tk/tk5.jpg',
       introduction: intl.get("home.case.tk.items"),
       tags: intl.get("home.case.tk.tags")
+    },
+    {
+      title: intl.get("home.case.mpoc.title"),
+      type: 'mpoc',
+      createAt: '2021年3月13日',
+      image: '/cases/nft/home.jpg',
+      introduction: intl.get("home.case.mpoc.items"),
+      tags: intl.get("home.case.mpoc.tags")
+    }
+  ] : [
+    {
+      title: intl.get("home.case.hisoul.title"),
+      type: 'hisoul',
+      createAt: '2021年3月13日',
+      image: '/cases/hisoul/hisoul0.jpg',
+      introduction: intl.get("home.case.hisoul.items"),
+      tags: intl.get("home.case.hisoul.tags")
+    },
+    {
+      title: intl.get("home.case.swcx.title"),
+      type: 'swcx',
+      createAt: '2021年3月13日',
+      image: '/cases/swcx/swcx0.jpg',
+      introduction: intl.get("home.case.swcx.items"),
+      tags: intl.get("home.case.swcx.tags")
     },
     {
       title: intl.get("home.case.mpoc.title"),
@@ -172,10 +197,10 @@ function HomePage() {
                 justifyContent: 'center'
               },
             }}>
-              {index == 0 && <BoltIcon className='advantage_icon' sx={{ color: pink[500] }} />}
-              {index == 1 && <HealthAndSafetyIcon className='advantage_icon' sx={{ color: amber[500] }} />}
-              {index == 2 && <LightbulbIcon className='advantage_icon' sx={{ color: lime[500] }} />}
-              {index == 3 && <GroupsIcon className='advantage_icon' sx={{ color: blue[500] }} />}
+              {index === 0 && <BoltIcon className='advantage_icon' sx={{ color: pink[500] }} />}
+              {index === 1 && <HealthAndSafetyIcon className='advantage_icon' sx={{ color: amber[500] }} />}
+              {index === 2 && <LightbulbIcon className='advantage_icon' sx={{ color: lime[500] }} />}
+              {index === 3 && <GroupsIcon className='advantage_icon' sx={{ color: blue[500] }} />}
               <Box sx={{ width: 240 }}>
                 <Typography variant="h5" gutterBottom>{item.title}</Typography>
                 <Typography variant='h7' color="white.600">
@@ -233,13 +258,12 @@ function HomePage() {
               }}
             >
               {caselist.map((row, key) => {
-                if (row.type == 'tk' && !isCN) return null
                 return <SwiperSlide key={key} style={{ background: '#fff' }}>
                   <Grid container>
                     <Grid item xs={12} md={7} sx={{ overflow: 'hidden' }}>
                       {/* <img className='swiper_banner' src={row.image} alt='' /> */}
                       <Box sx={{
-                        height: 360,
+                        height: 430,
                         position: 'relative',
                         overflow: 'hidden',
                         boxShadow: '1px 10px 5px 10px #333'
@@ -280,7 +304,7 @@ function HomePage() {
               })}
               <div className='control'>
                 <SlidePrevButton />
-                <Box>{currentIndex + 1}/{isCN ? caselist.length : caselist.length - 1}</Box>
+                <Box>{currentIndex + 1}/{caselist.length}</Box>
                 <SlideNextButton />
               </div>
             </Swiper>

@@ -1,8 +1,8 @@
 {
   "local": "en-US",
-  "navbar":{
-    "company":"MDIAN",
-    "case":"Case show"
+  "navbar": {
+    "company": "MDIAN",
+    "case": "Case show"
   },
   "home": {
     "title": "Leading the Future with Innovation",
@@ -22,28 +22,32 @@
         {
           "title": "AI",
           "values": [
-            "Custom application based on ChatGpt,",
-            "Pytorch"
+            "Custom application",
+            "Fine-Tuning",
+            "Based on ChatGpt 、Pytorch"
           ]
         },
         {
           "title": "BlockChain",
           "values": [
             "NFT Market",
-            "DApp development",
-            "DFi development"
+            "DAPP Development",
+            "DEFI Development"
           ]
         },
         {
           "title": "Metaverse",
           "values": [
-            "Virtual sapce"
+            "Virtual Space",
+            "Online Meeting",
+            "Multimedia Interaction"
           ]
         },
         {
           "title": "Sass",
           "values": [
-            "balala"
+            "Flexible Deployment",
+            "Flexible Module Integration"
           ]
         }
       ]
@@ -60,6 +64,30 @@
           "Virtual socializing",
           "Video chat",
           "Metaverse"
+        ]
+      },
+      "hisoul": {
+        "title": "HISOUL",
+        "items": [
+          "The metaverse will allow you to explore virtual 3D spaces where you can socialize, learn, collaborate and play.",
+          "We believe in the future of connection in the metaverse"
+        ],
+        "tags": [
+          "Virtual socializing",
+          "Video chat",
+          "Metaverse"
+        ]
+      },
+      "swcx": {
+        "title": "A geological data analysis platform",
+        "items": [
+          "Through geological data, displaying three-dimensional models can realize two-dimensional slice display and comprehensively view geological conditions",
+          "It can be deployed by multiple enterprises and projects, and each project contains multiple geological points to achieve point status management.",
+          "Applied to rail transit, bridges, hydropower pipelines and other scenarios that require geological analysis"
+        ],
+        "tags": [
+          "Sass",
+          "data analysis"
         ]
       },
       "gsp": {
