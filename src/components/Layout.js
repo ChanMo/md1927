@@ -18,6 +18,18 @@ export default function Layout({
             position: 'absolute',
             width: '100%',
             height: '100%',
+            '@keyframes slidein': {
+              '0%': {
+                transform: 'scale(1)',
+              },
+              '50%': {
+                transform: 'scale(1.5)',
+              },
+              '100%': {
+                transform: 'scale(1)',
+              }
+            },
+            animation: 'slidein 10s infinite',
             backgroundImage: `url(${'/images/banner.jpg'})`,
             opacity: 0.8,
             backgroundSize: 'cover',
