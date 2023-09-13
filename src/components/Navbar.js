@@ -117,7 +117,7 @@ export default function Navbar(props) {
               display: 'none'
             }
           }}>
-            {isCN?<Button
+            {isCN ? <Button
               id="basic-button"
               aria-controls={open ? 'basic-menu' : undefined}
               aria-haspopup="true"
@@ -127,7 +127,7 @@ export default function Navbar(props) {
               sx={{ color: "#333" }}
             >
               {intl.get('navbar.case')}
-            </Button>:null}
+            </Button> : null}
             <Menu
               id="basic-menu"
               anchorEl={anchorEl}
@@ -156,6 +156,19 @@ export default function Navbar(props) {
           <div style={{ flex: 1 }}></div>
           {/* <Button sx={{ color: "#333" }} href="/about">关于我们</Button> */}
           <Box sx={{
+            '.MuiButtonGroup-outlined': {
+              'button:nth-child(1)': {
+                borderTopLeftRadius: 20,
+                borderBottomLeftRadius: 20
+              },
+              'button:last-child': {
+                borderTopRightRadius: 20,
+                borderBottomRightRadius: 20
+              }
+            },
+            'button': {
+              boxShadow: 'none'
+            },
             '@media screen and (max-width:900px)': {
               display: 'none'
             }

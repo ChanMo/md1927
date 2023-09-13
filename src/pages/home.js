@@ -103,13 +103,13 @@ function HomePage() {
               <Typography variant="h5" paddingBottom={4} gutterBottom>
                 {intl.get('home.subtitle')}
               </Typography>
-              <Button variant="outlined"
+              <Button variant="contained"
                 sx={{
                   borderColor: "#6C63FF",
+                  boxShadow: 'none',
                   width: 'fit-content',
                   p: 0,
                   'a': {
-                    color: "#6C63FF",
                     py: 0.6,
                     px: 1.5,
                     textDecoration: 'none',
@@ -142,7 +142,7 @@ function HomePage() {
           }
         }}>
           <Typography variant='h4'
-            sx={{ mb: 5 }}>{intl.get('home.about.title')}</Typography>
+            sx={{ mb: 5, textAlign: 'center' }}>{intl.get('home.about.title')}</Typography>
           <Box>
             <Grid container spacing={3}>
               <Grid item xs={12} md={7} sx={{
@@ -186,17 +186,24 @@ function HomePage() {
               boxShadow: '1px 1px 20px 1px rgba(0,0,0,0.03)'
             },
           }}>
-            {intl.get('home.advantage.content').map((item, index) => <Grid key={index} item className='svg_box' xs={12} md={3} sx={{
-              display: 'flex', alignItems: 'center',
-              '.advantage_icon': {
-                mr: 2, fontSize: 46,
-                bgcolor: "#fff",
-                borderRadius: 2, p: 1
-              },
-              '@media screen and (max-width:900px)': {
-                justifyContent: 'center'
-              },
-            }}>
+            {intl.get('home.advantage.content').map((item, index) => <Grid key={index}
+              item
+              className='svg_box'
+              xs={12} md={3} sx={{
+                transition: '.3s',
+                ':hover': {
+                  transform: 'scale(1.1)'
+                },
+                display: 'flex', alignItems: 'center',
+                '.advantage_icon': {
+                  mr: 2, fontSize: 46,
+                  bgcolor: "#fff",
+                  borderRadius: 2, p: 1
+                },
+                '@media screen and (max-width:900px)': {
+                  justifyContent: 'center'
+                },
+              }}>
               {index === 0 && <BoltIcon className='advantage_icon' sx={{ color: pink[500] }} />}
               {index === 1 && <HealthAndSafetyIcon className='advantage_icon' sx={{ color: amber[500] }} />}
               {index === 2 && <LightbulbIcon className='advantage_icon' sx={{ color: lime[500] }} />}
@@ -312,7 +319,7 @@ function HomePage() {
         </Container>
       </Box >
       {isCN ? <Box sx={{ backgroundColor: 'rgba(0,0,0,0.02)', py: 10, alignItems: 'center' }}>
-        <Container>
+        <Container maxWidth="xl">
           <Typography variant='h4' sx={{ mb: 5, width: '100%' }}>{intl.get('home.contact.title')}</Typography>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} sx={{ height: 420, 'img': { width: '100%' } }}>
@@ -337,7 +344,7 @@ function HomePage() {
                   mx: 0
                 }
               }}>
-                <Typography variant="h5" gutterBottom>{intl.get('home.contact.title')}</Typography>
+                {/* <Typography variant="h5" gutterBottom>{intl.get('home.contact.title')}</Typography> */}
                 <Typography sx={{ mt: 1 }} color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.address.title')}</Typography>
                 <Typography gutterBottom>{intl.get('home.contact.address.value')}</Typography>
                 <Typography color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.phone.title')}</Typography>
