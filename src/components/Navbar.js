@@ -89,7 +89,7 @@ export default function Navbar(props) {
   return (
     <AppBar position="fixed" color="transparent" sx={{
       boxShadow: 'none',
-      background: 'rgba(255,255,255,0.9)'
+      background: 'rgba(255,255,255,1)'
     }}>
       <Container maxWidth='xl'>
         <Toolbar>
@@ -134,6 +134,11 @@ export default function Navbar(props) {
               open={open}
               onClose={handleClose}
               sx={{
+                boxShadow: 'none',
+                '.MuiMenu-paper': {
+                  paddingTop:1.2,
+                  boxShadow: 'none !important'
+                },
                 'a': {
                   display: 'block',
                   width: '100%',

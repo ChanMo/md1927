@@ -19,13 +19,16 @@ export default function Layout({
             width: '100%',
             height: '100%',
             '@keyframes slidein': {
-              '0%': {
+              '10%': {
                 transform: 'scale(1)',
               },
-              '50%': {
+              '49%': {
                 transform: 'scale(1.5)',
               },
-              '100%': {
+              '51%': {
+                transform: 'scale(1.5)',
+              },
+              '90%': {
                 transform: 'scale(1)',
               }
             },
