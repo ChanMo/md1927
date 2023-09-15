@@ -32,7 +32,7 @@ export default function Layout({
                 transform: 'scale(1)',
               }
             },
-            animation: 'slidein 10s infinite',
+            animation: 'slidein 20s',
             backgroundImage: `url(${'/images/banner.jpg'})`,
             opacity: 0.8,
             backgroundSize: 'cover',
