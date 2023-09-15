@@ -17,6 +17,7 @@ import { useState } from 'react';
 import { Grid as SwiperGrid, Pagination } from 'swiper/modules';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
+import WindowImg from '../components/WindowImg';
 
 const character_list = [{
   title: '权限控制',
@@ -120,9 +121,6 @@ function ShuanggaoPage() {
                 <Button variant="outlined">
                   <a href='mailto:chan.mo@outlook.com' target='__blank'>申请试用</a>
                 </Button>
-                {/* <Button variant="contained">
-                  <a style={{ color: "#fff" }}>申请试用</a>
-                </Button> */}
               </Box>
             </Grid>
             <Grid item xs={12} md={5} sx={{
@@ -168,10 +166,18 @@ function ShuanggaoPage() {
             <Grid container rowSpacing={0} columnSpacing={20}>
               <Grid item xs={12} md={6}>
                 <div className='about_img'>
-                  <img src="/images/shuanggao/zz_b4.jpg" alt=''></img>
+                  <WindowImg src='/images/shuanggao/zz_b4.jpg'></WindowImg>
                 </div>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={6} sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                pb: '100px',
+                '@media screen and (max-width:900px)': {
+                  pb: 0
+                },
+              }}>
                 <Typography variant='h4'
                   sx={{
                     mt: 4
@@ -207,10 +213,18 @@ function ShuanggaoPage() {
                 }
               }}>
                 <div className='about_img'>
-                  <img src="/images/shuanggao/zz_b6.jpg" alt=''></img>
+                  <WindowImg src='/images/shuanggao/zz_b6.jpg'></WindowImg>
                 </div>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={6} sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                pb: '100px',
+                '@media screen and (max-width:900px)': {
+                  pb: 0
+                },
+              }}>
                 <Typography variant='h4'
                   sx={{
                     mt: 2,
@@ -225,7 +239,7 @@ function ShuanggaoPage() {
                 }
               }}>
                 <div className='about_img'>
-                  <img src="/images/shuanggao/zz_b6.jpg" alt=''></img>
+                  <WindowImg src='/images/shuanggao/zz_b6.jpg'></WindowImg>
                 </div>
               </Grid>
             </Grid>
@@ -251,12 +265,17 @@ function ShuanggaoPage() {
             <Grid container rowSpacing={0} columnSpacing={20}>
               <Grid item xs={12} md={6}>
                 <div className='about_img'>
-                  <img src="/images/shuanggao/zz_b7.jpg" alt=''></img>
+                  <WindowImg src='/images/shuanggao/zz_b7.jpg'></WindowImg>
                 </div>
               </Grid>
               <Grid item xs={12} md={6} sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                pb: '100px',
                 pr: 10,
                 '@media screen and (max-width:900px)': {
+                  pb: 0,
                   pr: 0
                 },
               }}>

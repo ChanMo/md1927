@@ -90,12 +90,11 @@ function HomePage() {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              alignItems: 'center'
+              alignItems: 'center',
               // alignItems: !isCN ? 'center' : 'initial',
-              // '@media screen and (max-width:900px)': {
-              //   textAlign: 'center',
-              //   alignItems: 'center'
-              // }
+              '@media screen and (max-width:900px)': {
+                textAlign: 'center'
+              }
             }}>
               <Typography variant="h3" gutterBottom>
                 {intl.get('home.title')}

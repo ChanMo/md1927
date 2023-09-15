@@ -17,6 +17,7 @@ import { useState } from 'react';
 import { Grid as SwiperGrid, Pagination } from 'swiper/modules';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
+import WindowImg from '../components/WindowImg';
 
 function ZhiGaoPage() {
   const banners = [1, 2, 3, 4, 5]
@@ -122,7 +123,7 @@ function ZhiGaoPage() {
             }
           },
           '@media screen and (max-width:900px)': {
-            pb: 0
+            pb: 1
           }
         }}>
           <Box>
@@ -133,12 +134,17 @@ function ZhiGaoPage() {
                 }
               }}>
                 <div className='about_img'>
-                  <img src="/images/banner.jpg" alt=''></img>
+                  <WindowImg src='/images/banner.jpg'></WindowImg>
                 </div>
               </Grid>
               <Grid item xs={12} md={6} sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                pb: '100px',
                 '@media screen and (max-width:900px)': {
-                  pr: 0
+                  pr: 0,
+                  pb: 1
                 },
               }}>
                 <Typography variant='h4'
@@ -157,7 +163,7 @@ function ZhiGaoPage() {
                 }
               }}>
                 <div className='about_img'>
-                  <img src="/images/zhigao/zg_b3.jpg" alt=''></img>
+                  <WindowImg src='/images/zhigao/zg_b3.jpg'></WindowImg>
                 </div>
               </Grid>
             </Grid>
@@ -175,17 +181,25 @@ function ZhiGaoPage() {
             }
           },
           '@media screen and (max-width:900px)': {
-            pb: 0
+            pb: 1
           }
         }}>
           <Box>
             <Grid container rowSpacing={0} columnSpacing={20}>
               <Grid item xs={12} md={6}>
                 <div className='about_img'>
-                  <img src="/images/zhigao/zg_b2.jpg" alt=''></img>
+                  <WindowImg src='/images/zhigao/zg_b2.jpg'></WindowImg>
                 </div>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={6} sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                pb: '100px',
+                '@media screen and (max-width:900px)': {
+                  pb: 1
+                },
+              }}>
                 <Typography variant='h4'
                   sx={{
                     mt: 2,
@@ -215,7 +229,7 @@ function ZhiGaoPage() {
             }
           },
           '@media screen and (max-width:900px)': {
-            pb: 0
+            pb: 1
           }
         }}>
           <Box>
@@ -226,11 +240,16 @@ function ZhiGaoPage() {
                 },
               }}>
                 <div className='about_img'>
-                  <img src="/images/zhigao/zg_b4.jpg" alt=''></img>
+                  <WindowImg src='/images/zhigao/zg_b4.jpg'></WindowImg>
                 </div>
               </Grid>
               <Grid item xs={12} md={6} sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                pb: '100px',
                 '@media screen and (max-width:900px)': {
+                  pb: 1,
                   pr: 0
                 },
               }}>
@@ -251,7 +270,7 @@ function ZhiGaoPage() {
                 },
               }}>
                 <div className='about_img'>
-                  <img src="/images/zhigao/zg_b4.jpg" alt=''></img>
+                  <WindowImg src='/images/zhigao/zg_b4.jpg'></WindowImg>
                 </div>
               </Grid>
             </Grid>
