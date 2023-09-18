@@ -17,7 +17,7 @@ import {
   ListItemText,
   Divider,
 } from '@mui/material'
-import { forwardRef, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useLocal } from '../i18n/LocalProvider';
@@ -86,18 +86,23 @@ export default function Navbar(props) {
       </Dialog>
     </Box >
   }
+  const [opacity, setOpacity] = useState(0)
+  useEffect(() => {
+    window.addEventListener('scroll', e => {
+      setOpacity(window.scrollY / 200)
+    })
+  }, [])
   return (
     <AppBar position="fixed" color="transparent" sx={{
       boxShadow: 'none',
-      background: 'rgba(255,255,255,1)'
+      background: `rgba(33,33,33,${opacity})`
     }}>
       <Container maxWidth='xl'>
         <Toolbar>
           <Typography
             variant="h6"
-            href="/"
-            color="dark" component="a" sx={{
-              color: '#333',
+            href="/" component="a" sx={{
+              color: '#fff',
               textDecoration: 'none',
               fontWeight: 'bold',
               display: 'flex',
@@ -105,7 +110,9 @@ export default function Navbar(props) {
               'img': {
                 height: 32,
                 width: 32,
-                mr: 1
+                mr: 1,
+                background: "#fff",
+                borderRadius: '32px'
               }
             }}>
             <img src='/images/logo_md1927.svg' alt='' />
@@ -124,7 +131,7 @@ export default function Navbar(props) {
               aria-expanded={open ? 'true' : undefined}
               onClick={handleClick}
               onMouseOver={handleClick}
-              sx={{ color: "#333" }}
+              sx={{ color: "#fff" }}
             >
               {intl.get('navbar.case')}
             </Button> : null}
@@ -136,13 +143,14 @@ export default function Navbar(props) {
               sx={{
                 boxShadow: 'none',
                 '.MuiMenu-paper': {
-                  paddingTop:1.2,
+                  backgroundColor: "#000",
+                  paddingTop: 1.2,
                   boxShadow: 'none !important'
                 },
                 'a': {
                   display: 'block',
                   width: '100%',
-                  color: "#333 !important"
+                  color: "#fff !important"
                 }
               }}
             >
@@ -163,16 +171,18 @@ export default function Navbar(props) {
           <Box sx={{
             '.MuiButtonGroup-outlined': {
               'button:nth-child(1)': {
-                borderTopLeftRadius: 20,
-                borderBottomLeftRadius: 20
+                borderTopLeftRadius: 4,
+                borderBottomLeftRadius: 4
               },
               'button:last-child': {
-                borderTopRightRadius: 20,
-                borderBottomRightRadius: 20
+                borderTopRightRadius: 4,
+                borderBottomRightRadius: 4
               }
             },
             'button': {
-              boxShadow: 'none'
+              boxShadow: 'none',
+              borderColor: "#fff",
+              color: "#fff"
             },
             '@media screen and (max-width:900px)': {
               display: 'none'
