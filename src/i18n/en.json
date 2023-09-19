@@ -16,6 +16,18 @@
         "If you are looking for a leading software development company that can help you achieve your business goals, please contact Mandian Information Technology today."
       ]
     },
+    "businessScope": {
+      "title": "business scope",
+      "list": [
+        "APP",
+        "Wechat",
+        "Web",
+        "UI",
+        "Blockchain",
+        "Upgrade"
+      ],
+      "getPlay": "Get a quote scheme"
+    },
     "advantage": {
       "title": "WHAT WE DO",
       "content": [
@@ -137,18 +149,18 @@
       "title": "Contract Us",
       "company": "济南漫点信息科技",
       "address": {
-        "title": "公司地址",
+        "title": "Address",
         "value": "山东省济南市历下区鲁商盛景广场A1606"
       },
       "phone": {
-        "title": "联系电话",
+        "title": "Phone",
         "value": "13145312751"
       },
       "email": {
-        "title": "联系邮箱",
+        "title": "Email",
         "value": "chan.mo@outlook.com"
       },
-      "wx": "微信",
+      "wx": "wechat",
       "gzh": "公众号",
       "xhs": "小红书"
     }

@@ -86,23 +86,17 @@ export default function Navbar(props) {
       </Dialog>
     </Box >
   }
-  const [opacity, setOpacity] = useState(0)
-  useEffect(() => {
-    window.addEventListener('scroll', e => {
-      setOpacity(window.scrollY / 200)
-    })
-  }, [])
   return (
     <AppBar position="fixed" color="transparent" sx={{
       boxShadow: 'none',
-      background: `rgba(33,33,33,${opacity})`
+      background: `rgba(255,255,255,0.92)`
     }}>
       <Container maxWidth='xl'>
         <Toolbar>
           <Typography
             variant="h6"
             href="/" component="a" sx={{
-              color: '#fff',
+              color: '#333',
               textDecoration: 'none',
               fontWeight: 'bold',
               display: 'flex',
@@ -111,11 +105,14 @@ export default function Navbar(props) {
                 height: 32,
                 width: 32,
                 mr: 1,
-                background: "#fff",
+                // background: "#fff",
                 borderRadius: '32px'
+              },
+              '@media screen and (max-width:900px)': {
+                color: '#333'
               }
             }}>
-            <img src='/images/logo_md1927.svg' alt='' />
+            <img src='/images/logo_md1927.png' alt='' />
             <span>{intl.get('navbar.company')}</span>
           </Typography>
           <Box sx={{
@@ -131,7 +128,7 @@ export default function Navbar(props) {
               aria-expanded={open ? 'true' : undefined}
               onClick={handleClick}
               onMouseOver={handleClick}
-              sx={{ color: "#fff" }}
+              sx={{ color: "#333" }}
             >
               {intl.get('navbar.case')}
             </Button> : null}
@@ -143,14 +140,13 @@ export default function Navbar(props) {
               sx={{
                 boxShadow: 'none',
                 '.MuiMenu-paper': {
-                  backgroundColor: "#000",
                   paddingTop: 1.2,
                   boxShadow: 'none !important'
                 },
                 'a': {
                   display: 'block',
                   width: '100%',
-                  color: "#fff !important"
+                  color: "#333 !important"
                 }
               }}
             >
@@ -181,8 +177,8 @@ export default function Navbar(props) {
             },
             'button': {
               boxShadow: 'none',
-              borderColor: "#fff",
-              color: "#fff"
+              // borderColor: "#fff",
+              // borderWidth:2,
             },
             '@media screen and (max-width:900px)': {
               display: 'none'
