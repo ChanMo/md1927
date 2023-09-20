@@ -11,70 +11,59 @@ import Layout from '../components/Layout';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/css';
 import { Map, Marker } from 'react-amap';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocal } from '../i18n/LocalProvider';
+import 'animate.css'
 function HomePage() {
   const { intl, isCN } = useLocal()
   const [currentIndex, setCurrentIndex] = useState(0)
-  const caselist = isCN ? [
-    {
-      title: intl.get("home.case.dzkt.title"),
-      type: 'dzkt',
-      createAt: '2021年3月13日',
-      image: '/cases/dzkt/dzkt0.png',
-      introduction: intl.get("home.case.dzkt.items"),
-      tags: intl.get("home.case.dzkt.tags")
-    },
-    {
-      title: intl.get("home.case.gsp.title"),
-      type: 'gsp',
-      createAt: '2021年3月13日',
-      image: '/cases/gsp/gsp0.jpg',
-      introduction: intl.get("home.case.gsp.items"),
-      tags: intl.get("home.case.gsp.tags")
-    },
-    {
-      title: intl.get("home.case.tk.title"),
-      type: 'tk',
-      createAt: '2021年3月13日',
-      image: '/cases/tk/tk5.jpg',
-      introduction: intl.get("home.case.tk.items"),
-      tags: intl.get("home.case.tk.tags")
-    },
-    {
-      title: intl.get("home.case.mpoc.title"),
-      type: 'mpoc',
-      createAt: '2021年3月13日',
-      image: '/cases/nft/home.jpg',
-      introduction: intl.get("home.case.mpoc.items"),
-      tags: intl.get("home.case.mpoc.tags")
-    }
-  ] : [
-    {
-      title: intl.get("home.case.hisoul.title"),
-      type: 'hisoul',
-      createAt: '2021年3月13日',
-      image: '/cases/hisoul/hisoul0.jpg',
-      introduction: intl.get("home.case.hisoul.items"),
-      tags: intl.get("home.case.hisoul.tags")
-    },
-    {
-      title: intl.get("home.case.swcx.title"),
-      type: 'swcx',
-      createAt: '2021年3月13日',
-      image: '/cases/swcx/swcx0.jpg',
-      introduction: intl.get("home.case.swcx.items"),
-      tags: intl.get("home.case.swcx.tags")
-    },
-    {
-      title: intl.get("home.case.mpoc.title"),
-      type: 'mpoc',
-      createAt: '2021年3月13日',
-      image: '/cases/nft/home.jpg',
-      introduction: intl.get("home.case.mpoc.items"),
-      tags: intl.get("home.case.mpoc.tags")
-    }
-  ]
+  // 关于我们
+  const renderAbout = () => {
+    return <Box style={{ background: "#fff" }}>
+      <Container maxWidth='xl' sx={{
+        py: 10,
+        '.about_img': {
+          width: '100%',
+          'img': {
+            width: '100%',
+            objectFit: 'cover'
+          }
+        }
+      }}>
+        <Box>
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={7} sx={{
+              pr: 10,
+              '@media screen and (max-width:900px)': {
+                pr: 0
+              }
+            }}>
+              <Typography variant='h4'
+                className='wow animate__animated animate__fadeIn'
+                data-wow-delay='0.2s'
+                sx={{ mb: 5 }}>{intl.get('home.about.title')}</Typography>
+              {intl.get('home.about.content').map((item, index) => <Typography
+                className='wow animate__animated animate__fadeIn'
+                data-wow-delay='0.2s'
+                key={index}
+                gutterBottom>{item}</Typography>)}
+            </Grid>
+            <Grid item xs={6} md={5} sx={{
+              '@media screen and (max-width:900px)': {
+                display: 'none'
+              },
+            }}>
+              <div className='about_img'>
+                <img src="/images/Educator.png"
+                  className='wow animate__animated animate__fadeIn'
+                  data-wow-delay='0.2s' alt=''></img>
+              </div>
+            </Grid>
+          </Grid>
+        </Box>
+      </Container>
+    </Box>
+  }
   // 业务范围
   const renderBusinessScope = () => {
     const list = [
@@ -87,7 +76,9 @@ function HomePage() {
     ]
     return <Box style={{ background: "#fff" }}>
       <Container maxWidth="xl" sx={{ py: 10 }}>
-        <Typography variant='h4' sx={{ mb: 5 }}>{intl.get('home.businessScope.title')}</Typography>
+        <Typography className='wow rubberBand infinite' variant='h4' sx={{ mb: 5 }}
+          className='wow animate__animated animate__fadeIn'
+          data-wow-delay='0.2s'>{intl.get('home.businessScope.title')}</Typography>
         <Grid container spacing={3}>
           <Grid item xs={12} md={7} sx={{
             display: 'flex',
@@ -95,15 +86,18 @@ function HomePage() {
             flexWrap: 'wrap',
             position: 'relative'
           }}>
-            {list.map((item, key) => <Box key={key} sx={{
-              width: "33.33333%",
-              '@media screen and (max-width:900px)': {
-                display: 'flex',
-                justifyContent: 'center'
-              }
-            }}>
+            {list.map((item, key) => <Box
+              key={key} sx={{
+                width: "33.33333%",
+                '@media screen and (max-width:900px)': {
+                  display: 'flex',
+                  justifyContent: 'center'
+                }
+              }}>
               <Box
-                className='icon_box' sx={{
+                className='icon_box'
+                className='icon_box wow animate__animated animate__flipInY'
+                sx={{
                   textAlign: 'center',
                   alignItems: 'center',
                   width: 'fit-content',
@@ -132,12 +126,14 @@ function HomePage() {
               </Box>
             </Box>)}
           </Grid>
-          <Grid item xs={12} md={5} sx={{
-            textAlign: 'center',
-            'div': {
-              mb: 1
-            }
-          }}>
+          <Grid item xs={12} md={5}
+            className='icon_box wow animate__animated animate__fadeIn'
+            sx={{
+              textAlign: 'center',
+              'div': {
+                mb: 1
+              }
+            }}>
             <div><img src='/images/mdian.png' alt=''></img></div>
             <span>{intl.get('home.businessScope.getPlay')}</span>
           </Grid>
@@ -157,7 +153,7 @@ function HomePage() {
         }}>
           {intl.get('home.advantage.content').map((item, index) => <Grid key={index}
             item
-            className='svg_box'
+            className={`svg_box wow animate__animated animate__fadeIn${index === 0 ? 'BottomLeft' : index === 3 ? 'BottomRight' : 'Up'}`}
             xs={12} md={3} sx={{
               transition: '.3s',
               ':hover': {
@@ -190,6 +186,51 @@ function HomePage() {
   }
   // 案例展示
   const renderCase = () => {
+    const caselist = isCN ? [
+      {
+        title: intl.get("home.case.dzkt.title"),
+        image: '/cases/dzkt/dzkt0.png',
+        introduction: intl.get("home.case.dzkt.items"),
+        tags: intl.get("home.case.dzkt.tags")
+      },
+      {
+        title: intl.get("home.case.gsp.title"),
+        image: '/cases/gsp/gsp0.jpg',
+        introduction: intl.get("home.case.gsp.items"),
+        tags: intl.get("home.case.gsp.tags")
+      },
+      {
+        title: intl.get("home.case.tk.title"),
+        image: '/cases/tk/tk5.jpg',
+        introduction: intl.get("home.case.tk.items"),
+        tags: intl.get("home.case.tk.tags")
+      },
+      {
+        title: intl.get("home.case.mpoc.title"),
+        image: '/cases/nft/home.jpg',
+        introduction: intl.get("home.case.mpoc.items"),
+        tags: intl.get("home.case.mpoc.tags")
+      }
+    ] : [
+      {
+        title: intl.get("home.case.hisoul.title"),
+        image: '/cases/hisoul/hisoul0.jpg',
+        introduction: intl.get("home.case.hisoul.items"),
+        tags: intl.get("home.case.hisoul.tags")
+      },
+      {
+        title: intl.get("home.case.swcx.title"),
+        image: '/cases/swcx/swcx0.jpg',
+        introduction: intl.get("home.case.swcx.items"),
+        tags: intl.get("home.case.swcx.tags")
+      },
+      {
+        title: intl.get("home.case.mpoc.title"),
+        image: '/cases/nft/home.jpg',
+        introduction: intl.get("home.case.mpoc.items"),
+        tags: intl.get("home.case.mpoc.tags")
+      }
+    ]
     return <Box style={{ background: "#fff" }}>
       <Container maxWidth='xl' sx={{
         py: 10,
@@ -307,14 +348,16 @@ function HomePage() {
               width: '100%'
             },
             'img': {
-              transition:'.4s',
+              transition: '.4s',
               paddingY: '4%',
               width: '90%'
             }
           },
         }}>
           {[1, 2, 3, 4, 6, 5].map((item, key) => <Box key={key}>
-            <img src={`/images/project${item}.png`} alt='' />
+            <img
+              className='icon_box wow animate__animated animate__fadeIn'
+              src={`/images/project${item}.png`} alt='' />
           </Box>)}
         </Box>}
       </Container>
@@ -405,10 +448,10 @@ function HomePage() {
                 textAlign: 'center'
               }
             }}>
-              <Typography variant="h3" gutterBottom>
+              <Typography className='wow animate__animated animate__bounceIn' variant="h3" gutterBottom>
                 {intl.get('home.title')}
               </Typography>
-              <Typography variant="h5" paddingBottom={4} gutterBottom>
+              <Typography className='wow animate__animated animate__flipInX' variant="h5" paddingBottom={4} gutterBottom>
                 {intl.get('home.subtitle')}
               </Typography>
               <Button variant="contained"
@@ -439,42 +482,7 @@ function HomePage() {
             </Grid>} */}
           </Grid>
         </Container>}>
-      <Box style={{ background: "#fff" }}>
-        <Container maxWidth='xl' sx={{
-          py: 10,
-          '.about_img': {
-            width: '100%',
-            'img': {
-              width: '100%',
-              objectFit: 'cover'
-            }
-          }
-        }}>
-          <Box>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={7} sx={{
-                pr: 10,
-                '@media screen and (max-width:900px)': {
-                  pr: 0
-                }
-              }}>
-                <Typography variant='h4'
-                  sx={{ mb: 5 }}>{intl.get('home.about.title')}</Typography>
-                {intl.get('home.about.content').map((item, index) => <Typography key={index} gutterBottom>{item}</Typography>)}
-              </Grid>
-              <Grid item xs={6} md={5} sx={{
-                '@media screen and (max-width:900px)': {
-                  display: 'none'
-                },
-              }}>
-                <div className='about_img'>
-                  <img src="/images/Educator.png" alt=''></img>
-                </div>
-              </Grid>
-            </Grid>
-          </Box>
-        </Container>
-      </Box>
+      {renderAbout()}
       {renderBusinessScope()}
       {renderAdvantage()}
       {renderCase()}

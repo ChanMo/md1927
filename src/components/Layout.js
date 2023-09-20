@@ -12,7 +12,8 @@ export default function Layout({
       {banner || bannerContent ? <Box
         sx={{
           position: 'relative',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          height:'90vh'
         }}>
         {banner ? <Box
           sx={{
@@ -47,7 +48,7 @@ export default function Layout({
           background: 'rgba(0,0,0,0.6)'
         }}></Box> : null}
         <Box sx={{
-          height: 700,
+          height: '100%',
           paddingTop: '64px',
           position: 'relative',
           zIndex: 1,
