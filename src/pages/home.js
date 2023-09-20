@@ -145,7 +145,11 @@ function HomePage() {
   const renderAdvantage = () => {
     return <Box sx={{ background: "#fff" }}>
       <Container maxWidth='xl' sx={{ py: 10 }}>
-        <Typography variant='h4' sx={{ mb: 5 }}>{intl.get('home.advantage.title')}</Typography>
+        <Typography
+          variant='h4'
+          sx={{ mb: 5 }}
+          className='svg_box wow animate__animated animate__fadeIn'
+        >{intl.get('home.advantage.title')}</Typography>
         <Grid container spacing={3} sx={{
           'svg': {
             boxShadow: '1px 1px 20px 1px rgba(0,0,0,0.03)'
@@ -153,7 +157,7 @@ function HomePage() {
         }}>
           {intl.get('home.advantage.content').map((item, index) => <Grid key={index}
             item
-            className={`svg_box wow animate__animated animate__fadeIn${index === 0 ? 'BottomLeft' : index === 3 ? 'BottomRight' : 'Up'}`}
+            className='svg_box wow animate__animated animate__fadeIn'
             xs={12} md={3} sx={{
               transition: '.3s',
               ':hover': {
@@ -240,7 +244,8 @@ function HomePage() {
         alignItems: 'center',
         position: 'relative',
       }}>
-        <Typography variant='h4' sx={{ mb: 5, width: '100%' }}>{intl.get('home.case.title')}</Typography>
+        <Typography variant='h4' sx={{ mb: 5, width: '100%' }}
+          className='svg_box wow animate__animated animate__fadeIn'>{intl.get('home.case.title')}</Typography>
         {intl.get('local') == 'en-US' ? <Box sx={{
           width: '100%',
           '.swiper': {
@@ -367,7 +372,9 @@ function HomePage() {
   const renderContact = () => {
     return <Box sx={{ backgroundColor: 'rgba(0,0,0,0.02)', py: 10, alignItems: 'center' }}>
       <Container maxWidth="xl">
-        <Typography variant='h4' sx={{ mb: 5, width: '100%' }}>{intl.get('home.contact.title')}</Typography>
+        <Typography variant='h4' sx={{ mb: 5, width: '100%' }}
+          className='svg_box wow animate__animated animate__fadeIn'
+        >{intl.get('home.contact.title')}</Typography>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} sx={{ height: 420, 'img': { width: '100%' } }}>
             <Map
@@ -377,6 +384,7 @@ function HomePage() {
               }}
               center={{ longitude: 117.109517, latitude: 36.695167 }}
               zoom={12}
+              className='svg_box wow animate__animated animate__fadeIn'
             >
               <Marker position={{ longitude: 117.109517, latitude: 36.695167 }} />
             </Map>
@@ -392,12 +400,18 @@ function HomePage() {
               }
             }}>
               {/* <Typography variant="h5" gutterBottom>{intl.get('home.contact.title')}</Typography> */}
-              <Typography sx={{ mt: 1 }} color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.address.title')}</Typography>
-              <Typography gutterBottom>{intl.get('home.contact.address.value')}</Typography>
-              <Typography color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.phone.title')}</Typography>
-              <Typography gutterBottom>{intl.get('home.contact.phone.value')}</Typography>
-              <Typography color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.email.title')}</Typography>
-              <Typography sx={{ mb: 1 }} gutterBottom>{intl.get('home.contact.email.value')}</Typography>
+              <Typography
+                className='svg_box wow animate__animated animate__fadeIn' sx={{ mt: 1 }} color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.address.title')}</Typography>
+              <Typography
+                className='svg_box wow animate__animated animate__fadeIn' gutterBottom>{intl.get('home.contact.address.value')}</Typography>
+              <Typography
+                className='svg_box wow animate__animated animate__fadeIn' color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.phone.title')}</Typography>
+              <Typography
+                className='svg_box wow animate__animated animate__fadeIn' gutterBottom>{intl.get('home.contact.phone.value')}</Typography>
+              <Typography
+                className='svg_box wow animate__animated animate__fadeIn' color={grey[600]} variant="h7" gutterBottom>{intl.get('home.contact.email.title')}</Typography>
+              <Typography
+                className='svg_box wow animate__animated animate__fadeIn' sx={{ mb: 1 }} gutterBottom>{intl.get('home.contact.email.value')}</Typography>
               <Box sx={{ flex: 1 }}></Box>
               <Box sx={{
                 display: 'flex', textAlign: 'center',
@@ -409,8 +423,10 @@ function HomePage() {
                 }
               }}>
                 <Box>
-                  <img src="/images/mdian.png" alt=''></img>
-                  <Typography>{intl.get('home.contact.wx')}</Typography>
+                  <img
+                    className='svg_box wow animate__animated animate__fadeIn' src="/images/mdian.png" alt=''></img>
+                  <Typography
+                    className='svg_box wow animate__animated animate__fadeIn'>{intl.get('home.contact.wx')}</Typography>
                 </Box>
                 {/* <Box>
                 <img src="/images/mdian.png" alt=''></img>
