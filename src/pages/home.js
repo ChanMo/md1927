@@ -13,7 +13,6 @@ import 'swiper/css';
 import { Map, Marker } from 'react-amap';
 import { useEffect, useState } from 'react';
 import { useLocal } from '../i18n/LocalProvider';
-import 'animate.css'
 function HomePage() {
   const { intl, isCN } = useLocal()
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -464,10 +463,10 @@ function HomePage() {
                 textAlign: 'center'
               }
             }}>
-              <Typography className='wow animate__animated animate__bounceIn' variant="h3" gutterBottom>
+              <Typography className='wow animate__animated animate__bounceIn' variant="h2" sx={{ fontWeight: '400' }} gutterBottom>
                 {intl.get('home.title')}
               </Typography>
-              <Typography className='wow animate__animated animate__flipInX' variant="h5" paddingBottom={4} gutterBottom>
+              <Typography className='wow animate__animated animate__flipInX' variant="h4" paddingBottom={4} gutterBottom>
                 {intl.get('home.subtitle')}
               </Typography>
               <Button variant="contained"
